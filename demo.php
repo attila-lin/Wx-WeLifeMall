@@ -19,7 +19,7 @@ switch($type) {
                     'Title'=>'点击查看今日菜谱',
                     'Description'=>'',
                     'PicUrl'=>'http://www.welifemall.com/Upload/20131204101750foc.jpg',
-                    'Url'=>'http://www.domain.com/1.html'
+                    'Url'=>'http://www.welifemall.com/'
                     )
             );
             $weObj->news($newsData)->reply();

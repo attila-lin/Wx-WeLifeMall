@@ -32,7 +32,7 @@ if($_POST['action'] == "login"){
     else //如果用户名和密码不正确，则输出错误 
     { 
         echo "<html><head><title>login failed</title></head><body>";
-        echo "<a href='loginin.php' href='main.php'>用户名或密码错误</a>"; 
+        echo "<a href='loginin.php' href='index.php'>用户名或密码错误</a>"; 
         echo "</body></html>";
     } 
 
@@ -46,7 +46,7 @@ if($_POST['action'] == "login"){
 if($_POST['action'] == "logout"){
     unset($_SESSION['mno']);
     unset($_SESSION['mid']);
-    echo '注销登录成功！点击此处 <a href="loginin.php">登录</a>';
+    echo '注销登录成功！点击此处 <a href="main.php">登录</a>';
     exit;
 }
 

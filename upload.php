@@ -22,7 +22,9 @@ if($upload_file){
     } 
     // 检查读写文件  
     $type = $_FILES['upload_file']['type'];
-    $upload_file_name = substr($upload_file_name, 0,5) . '.' . substr($type, strpos($type, '/')+1, strlen($type) );
+    if(strlen($upload_file_name)>=13){
+      $upload_file_name = substr($upload_file_name, 0,5) . '.' . substr($type, strpos($type, '/')+1, strlen($type) );
+    }
     if (file_exists($store_dir . $upload_file_name) && !$accept_overwrite) {  
       Echo "存在相同文件名的文件";  
       exit;  

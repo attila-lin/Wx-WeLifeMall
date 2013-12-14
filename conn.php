@@ -1,5 +1,5 @@
 <?php
-$con = mysql_connect("hdm-062.hichina.com","name","password");
+$con = mysql_connect("hdm-062.hichina.com","name","passwd");
 if (!$con)
 {
   die('Could not connect: ' . mysql_error());

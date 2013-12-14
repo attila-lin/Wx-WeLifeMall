@@ -8,11 +8,11 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- 表的结构 `card`
+-- 表的结构 `cai`
 --
 
 DROP TABLE IF EXISTS `cai`;
-CREATE TABLE IF NOT EXISTS `card` (
+CREATE TABLE IF NOT EXISTS `cai` (
   `cno` int(8) NOT NULL AUTO_INCREMENT,
   `cname` varchar(20) NOT NULL,
   `cprice` decimal(7,2) NOT NULL,
@@ -23,10 +23,10 @@ CREATE TABLE IF NOT EXISTS `card` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- 转存表中的数据 `card`
+-- 转存表中的数据 `cai`
 --
 
-INSERT INTO `card` (`cno`, `cname`, `cprice`, `cpic`, `belifcontent`, `type`) VALUES
+INSERT INTO `cai` (`cno`, `cname`, `cprice`, `cpic`, `belifcontent`, `type`) VALUES
 (1, '菜', 10.0, '1', '', '素菜'),
 (2, '菜', 10.0, '1', '', '素菜'),
 (3, '菜', 10.0, '1', '', '素菜');

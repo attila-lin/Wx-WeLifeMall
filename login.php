@@ -13,13 +13,6 @@ if($_POST['action'] == "login"){
     $password =  $_POST["pass"];
 
     include( 'conn.php' );
-    
-    // $query = mysql_query("SELECT `mpassword` FROM `manager` WHERE `mid` LIKE '" . mysql_escape_string($username) . "';");
-
-    // $query = mysql_query("select mid from manager " 
-    //                         ."where mid = '$username' and mpassword = '$password'") or die("SQL语句执行失败"); 
-    // print_r($username);
-    // print_r($password);
 
     $query = mysql_query("SELECT `mno`,`mid` from `manager` where `mid`='$username' and `mpassword`='$password' limit 1");
     
@@ -33,28 +26,8 @@ if($_POST['action'] == "login"){
         $_SESSION['mno'] = $row['mno']; 
         $_SESSION['mid'] = $row['mid']; 
 
-        echo "
-        <html>
-        <head>
-            <title>管理界面</title>
-        </head>
-        <body>
-        
-        欢迎登录管理界面<br />
-        <a href='insert.php' >添加菜品</a> <br />
-        设置今日菜品
-        <a href='.php' >厨房</a> <br />
-        <a href='.php' >蔬菜</a> <br />
-        <a href='.php' >荤菜</a> <br />
-        <a href='.php' >水果</a> <br />
-
-        <form action='login.php' method='post'>
-            <input type='submit' name='action' value='logout'/>
-        </form>
-
-        </body>
-        </html>
-        ";
+        $url="main.php";
+        header("Location: $url");
     } 
     else //如果用户名和密码不正确，则输出错误 
     { 

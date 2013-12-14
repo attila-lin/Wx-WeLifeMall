@@ -12,7 +12,7 @@
             include( 'conn.php' );
             $query = mysql_query("SELECT * from `cai` WHERE `cno`='$cno' limit 1");
             if($row = mysql_fetch_array($query)){
-                echo '<input type="hidden" value=' . $_GET[cno] . '>';
+                echo '<input type="hidden" name="cno" value=' . $_GET[cno] . '>';
                 echo 'name      <input type="text" name="cname" value="' .$row[cname] . '"/> <br />';
                 echo 'price     <input type="text" name="cprice" value="' .$row[cprice] . '"/> <br />';
                 echo 'belifcontent <input type="text" name="belifcontent" value="' .$row[belifcontent] . '"/> <br />';
@@ -30,7 +30,7 @@
         <input type="hidden" name="cno" value=<?php echo '"' . $cno . '"' ?> > 
         <input type="submit" value="提交文件">  
     </form>  
-    
+
     <a href='delete.php'>返回</a><br />
 
   </body>

@@ -13,5 +13,7 @@
   		?>
       <input type='submit' name='action' value='del'/>
   	</form>
+  	<br /><br />
+  	<a href='main.php'>返回</a>
   	</body>
 </html>

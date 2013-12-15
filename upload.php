@@ -1,5 +1,10 @@
 <?
 
+session_start();
+if(!isset($_SESSION['mno']))
+  header("Location: index.php");
+
+
 
 $upload_file=$_FILES['upload_file']['tmp_name'];  
 $upload_file_name=$_FILES['upload_file']['name'];  

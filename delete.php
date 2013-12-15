@@ -1,3 +1,10 @@
+<?
+session_start();
+$url="index.php";
+if(!isset($_SESSION['mno']))
+  header("Location: $url");
+?>
+
 <html>
   <head>
       <title>管理界面</title>
@@ -13,7 +20,9 @@
   		?>
       <input type='submit' name='action' value='del'/>
   	</form>
-  	<br /><br />
+
+  	<br />
+    <br />
   	<a href='main.php'>返回</a>
   	</body>
 </html>

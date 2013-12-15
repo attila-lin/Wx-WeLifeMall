@@ -20,7 +20,10 @@ if($_POST['action'] == "login"){
     //判断用户是否存在，密码是否正确 
     if($row = mysql_fetch_array($query)) 
     { 
-        // print_r($row);
+        //设置session生命周期 半个小时 
+        $lifeTime = 18; 
+        session_set_cookie_params($lifeTime);
+        
         session_start(); //标志Session的开始 
 
         $_SESSION['mno'] = $row['mno']; 

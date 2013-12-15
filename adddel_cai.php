@@ -1,4 +1,11 @@
 <?
+
+session_start();
+$url="index.php";
+if( !isset($_SESSION['mno']) )
+  header("Location: $url");
+
+
 if($_POST[action] == 'add'){
     // print_r($_POST);
     include( 'conn.php' );

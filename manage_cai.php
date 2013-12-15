@@ -1,3 +1,10 @@
+<?
+session_start();
+$url="index.php";
+if(!isset($_SESSION['mno']))
+  header("Location: $url");
+?>
+
 <html>
   <head>
       <title></title>

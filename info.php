@@ -6,6 +6,7 @@
    <body>
    	<form action='order.php' method='post'>
 <?
+	
 if($_GET[user]){
 	echo "<input type='hidden' name='openid' value='" . $_GET[user] . "' />";
 	// echo $_GET[user];

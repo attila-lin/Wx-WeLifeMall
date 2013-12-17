@@ -14,26 +14,20 @@ class address{
 	function getAddr($id) {
 		$sql = "SELECT * FROM `$this->tblName` 
 				WHERE `uid` = '$id'";
-		$this->db->query($sql);
-		return $this->db->fetchAll();
+		return $this->db->query($sql) ? $this->db->fetchAll() : false;
 	}
 
 	function editAddr($no, $address) {
 		$sql = "UPDATE `$this->tblName`
 				SET `address` = '$address'
 				WHERE `ano` = '$no'";
-		if($this->db->query($sql))
-			return true;
-		else
-			return false;
+		return $this->db->query($sql) ? true : false;
 	}
 
 	function addAddr($id, $address) {
 		$sql = "INSERT INTO `$this->tblName` 
 				VALUES(null,'$id','$address')";
-		$this->db->query($sql);
-
-		return $this->db->insertID();
+		return $this->db->query($sql) ? $this->db->insertID() : false;
 	}
 
 	function delAddr($no) {
@@ -45,8 +39,6 @@ class address{
 			$tmp = "= $no";
 		}
 		$sql = "DELETE FROM `$this->tblName` WHERE ano " . $tmp ;
-		$this->db->query($sql);
-
-		return $this->db->affectedRows();
+		return $this->db->query($sql) ? $this->db->affectedRows() : false;
 	}
 }

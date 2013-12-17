@@ -6,13 +6,14 @@
  */
 
 require 'libs/Smarty.class.php';
+require 'init.php';
 
 $smarty = new Smarty;
 
-$smarty->setTemplateDir('../templates/');
-$smarty->setCompileDir('../templates_c/');
-$smarty->setConfigDir('../configs/');
-$smarty->setCacheDir('../cache/');
+$smarty->setTemplateDir(WE_TEMPLATE_DIR);
+$smarty->setCompileDir(WE_COMPILE_DIR);
+$smarty->setConfigDir(WE_CONFIG_DIR);
+$smarty->setCacheDir(WE_CACHE_DIR);
 
 // $smarty->testInstall();
 

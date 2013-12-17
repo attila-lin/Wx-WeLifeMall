@@ -4,13 +4,17 @@ class user{
 	private $db;
 	private $tblName;
 	private $fieldList;
+	private $address;
+	private $phone;
 
 	function user($db){
 		$this->$db 		= $db;
 		$this->$tblName = "user";
-		$this->$fieldList= array("uid", "openid", "uname", "upwd"); 
+		// $this->$fieldList= array("uid", "openid", "uname", "upwd"); 
+		// 暂时只要openid
+		$this->$fieldList= array("uid", "openid"); 
 	}
-
+/*
 	function login($name, $pwd){
 		$sql = "SELECT `uid` from `this->$tblName` where `uname`='$name' and `upwd`='$pwd' limit 1";
 		$this->$db->query($sql);
@@ -37,32 +41,51 @@ class user{
 	    session_destroy();
 	    return true;
 	}
-
-	function getUser($name, $pwd) {
-		$sql = "SELECT `uid` FROM `$this->tblName` 
-				WHERE `uname` = '$name'";
-		$this->db->query($sql);
-		return $this->db->fetchRow();
-	}
-
-	function addUser($name, $pwd) {
-		$sql = "SELECT `uid` FROM `$this->tblName` 
-				WHERE `uname` = '$name'";
-
-		$this->db->query($sql);
-		if($this->db->recordCount())
-		{
-			return -1;
+*/
+	function getUser($openid) {
+		$sql = "SELECT * FROM `$this->tblName` 
+				WHERE `openid` = '$openid'";
+		if($this->db->query($sql)){
+			return $this->db->fetchRow();
 		}
-		$sql = "INSERT INTO `$this->tblName` 
-				VALUES(null,'$name','$pwd')";
-		$this->db->query($sql);
+		else{
+			return false;
+		}
+	}
+/*
+	function editUser($id, $pwd)
+	{
+		$sql = "UPDATE `$this->tblName`
+				SET `upwd` = '$pwd'
+				WHERE `uid` = '$id'";
+		if($this->db->query($sql))
+			return true;
+		else
+			return false;
+	}
+*/
+	function addUser($openid) {
+		$sql = "SELECT `uid` FROM `$this->tblName` 
+				WHERE `openid` = '$openid'";
 
-		return $this->db->insertID();
+		if($this->db->query($sql)){
+			if($this->db->recordCount())
+			{
+				return -1;
+			}
+			$sql = "INSERT INTO `$this->tblName` 
+					VALUES(null,'$openid')";
+			return $this->db->query($sql) ? $this->db->insertID() : false;
+		}
+		else{
+			return false;
+		}
+		
+		
 	}
 
 	function delUser($id) {
-		// 条件判断
+		// 条件判断格式
 		if(is_array($id)) {
 			$tmp = "IN (" . join(",", $id) . ")";
 		}
@@ -70,8 +93,16 @@ class user{
 			$tmp = "= $id";
 		}
 		$sql = "DELETE FROM `$this->tblName` WHERE uid " . $tmp ;
-		$this->db->query($sql);
+		return $this->db->query($sql) ? $this->db->affectedRows() : false;
+	}
 
-		return $this->db->affectedRows();
+	function getaddress(){
+		$this->address = address($this->db);
+		return $this.address;
+	}
+
+	function getphone(){
+		$this->phone = phone($this->db);
+		return $this.phone;
 	}
 }

@@ -7,130 +7,136 @@
 
 ### 1.登陆
 
-methor: POST
-action: login.php
-data:
-	uname 
-	pwd
-	action = login
+	methor: POST
+	action: login.php
+	data:
+		uname 
+		pwd
+		action = login
 
-result:
-	成功:index.php
-	失败:login.php
+	result:
+		成功:index.php
+		失败:login.php
 
 
 ### 2.登出
 
-methor: POST
-action: logout.php
-data:
-	action = logout
+	methor: POST
+	action: logout.php
+	data:
+		action = logout
 
-result:
-	成功:login.php
-	失败:login.php
+	result:
+		成功:login.php
+		失败:login.php
 
 ### 3.添加菜
 
-methor: POST
-action: add.php
-data:
-	name, price, category, pic, content
-	action = add
+	methor: POST
+	action: add.php
+	data:
+		name, price, category, pic, content
+		action = add
 
-result:
-	成功: $log = 1
-	失败: $log = 0
+	result:
+		成功: $log = 1
+		失败: $log = 0
 
 ### 4.修改
 
-methor: POST
-action: change.php
-data:
-	id, name, price, category, pic, content
-	// category 为数字 1,2,3,4 分别对应四个类别
-	action = edit
+	methor: POST
+	action: change.php
+	data:
+		id, name, price, category, pic, content
+		// category 为数字 1,2,3,4 分别对应四个类别
+		action = edit
 
-result:
-	成功: $log = 1
-	失败: $log = 0
+	result:
+		成功: $log = 1
+		失败: $log = 0
 
 ### 5.删除菜
-$foods = array(id, name)
 
-methor: POST
-action: delete.php
-data:
-	id = 1|2|3   // 用'|'分隔
-	action = delete
+	$foods = array(id, name)
 
-result:
-	成功: $log = 1
-	失败: $log = 0
+	methor: POST
+	action: delete.php
+	data:
+		id = 1|2|3   // 用'|'分隔
+		action = delete
+
+	result:
+		成功: $log = 1
+		失败: $log = 0
 
 ### 6.查看所有菜
-methor: GET
-action: food.php
-data:
-	// 默认全部输出
-	num  // 每页数
-	page // 页号
+
+	methor: GET
+	action: food.php
+	data:
+		// 默认全部输出
+		num  // 每页数
+		page // 页号
 
 
-result:
-	成功: $foods = array()
-	失败: 
+	result:
+		成功: $foods = array()
+		失败: 
 
 ### 7.管理订单
-$orders = array("oid", "uid", "fids", "time", "price", "ano", "pno", "status" )
 
-methor: GET
-action: food.php
-data:
-	// 默认全部输出
-	num  // 每页数
-	page // 页号
+	$orders = array("oid", "uid", "fids", "time", "price", "ano", "pno", "status" )
+
+	methor: GET
+	action: food.php
+	data:
+		// 默认全部输出
+		num  // 每页数
+		page // 页号
 
 
-result:
-	成功: $orders = array("oid", "uid", "fids", "time", "price", "ano", "pno", "status" )
-	失败: 
+	result:
+		成功: $orders = array("oid", "uid", "fids", "time", "price", "ano", "pno", "status" )
+		失败: 
 
 
 
 ### 7.设置菜
 #### 1) 得到菜单
-methor: POST
-action: today_menu.php
-data:
-	category
 
-result:
-	成功: $foods = array()
-	失败: 
+	methor: POST
+	action: today_menu.php
+	data:
+		category
+
+	result:
+		成功: $foods = array()
+		失败: 
 
 #### 2) 设置推荐菜
-methor: POST
-action: today_menu.php
-data:
-	id = 1|2|3
 
-result:
-	成功: $log = 1
-	失败: $log = 0
+	methor: POST
+	action: today_menu.php
+	data:
+		id = 1|2|3
+
+	result:
+		成功: $log = 1
+		失败: $log = 0
 
 
 ### 微信点菜
 #### 1.查看今日菜单
-methor: GET
-action: today.php
-data:
-	// category 为数字 1,2,3,4 分别对应四个类别
-	category
 
-result:
-	成功: $log = 1
-	失败: $log = 0
+	methor: GET
+	action: today.php
+	data:
+		// category 为数字 1,2,3,4 分别对应四个类别
+		category
+
+	result:
+		成功: $log = 1
+		失败: $log = 0
 
 
 #### 2.点单

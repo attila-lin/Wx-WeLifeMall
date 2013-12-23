@@ -43,10 +43,11 @@ $phone = new phone($db);
 
 $userarray = $user->getAllUser();
 
-foreach ($userarray as $key => $value) {
+foreach ($userarray as $key => $value) { // userarray = { [uid] = }
 	$anos = $address->getAddr($value['uid']);
 	$pnos = $phone->getPhone($value['uid']);
-	array_push($value, 'anos' => $anos, 'pnos' => $pnos);
+	$value['anos'] = $anos;
+	$value['pnos'] = $pnos;
 }
 
 if(!isset($_GET['num']))

@@ -5,7 +5,7 @@ class food{
 	private $tblName;
 	private $fieldList;
 
-	function food($db ,$category){
+	function food($db, $category){
 		$this->db 		= $db;
 		// chinese western fruit dessert
 		$this->tblName = $category;
@@ -19,7 +19,7 @@ class food{
 		return $this->db->fetchRow();
 	}
 
-	function editFood($id, $name, $price, $category, $pic, $content) {
+	function editFood($id, $name, $price, $pic, $content) {
 		$sql = "UPDATE `$this->tblName`
 				SET `name` = '$name', `price` = '$price', 
 				    `pic` = '$pic', `content` = '$content', 
@@ -30,9 +30,9 @@ class food{
 			return false;
 	}
 
-	function addFood($name, $price, $category, $pic, $content) {
+	function addFood($name, $price, $pic, $content) {
 		$sql = "INSERT INTO `$this->tblName` 
-				VALUES(null, '$name','$price', '$category', '$pic','$content')";
+				VALUES(null, '$name','$price', '$pic','$content')";
 		$this->db->query($sql);
 
 		return $this->db->insertID();
@@ -50,5 +50,22 @@ class food{
 		$this->db->query($sql);
 
 		return $this->db->affectedRows();
+	}
+
+	function setRecommond($id){
+		$sql = "UPDATE `$this->tblName`
+				SET `recommond` = '1' 
+				WHERE `id` = '$id'";
+		if($this->db->query($sql))
+			return true;
+		else
+			return false;
+	}
+
+	function getRecommond() {
+		$sql = "SELECT * FROM `$this->tblName` 
+				WHERE `recommond` = '1'";
+		$this->db->query($sql);
+		return $this->db->fetchAll();
 	}
 }

@@ -7,14 +7,14 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- 表的结构 `address`
+-- 表的结构 `phone`
 --
 
-DROP TABLE IF EXISTS `address`;
-CREATE TABLE `address` (
-    `ano` int(6) NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `phone`;
+CREATE TABLE `phone` (
+    `pno` int(6) NOT NULL AUTO_INCREMENT,
     `uid` int(6) NOT NULL,
-    `address`  char(80) NOT NULL,
-    PRIMARY KEY (`ano`)
+    `phone` varchar(11) NOT NULL,
+    PRIMARY KEY (`pno`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 

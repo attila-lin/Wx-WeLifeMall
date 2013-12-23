@@ -13,7 +13,6 @@ if(!admin::isLogin())
 {
 	if (isset($_POST['action']) && $_POST['action'] == "login") 
 	{
-		
 		$db	 	= new db(DB_HOST, DB_USER, DB_PWD, DB_NAME);
 		$admin	= new admin($db);
 		$log	= $admin->login($_POST['uname'], $_POST['pwd']); 

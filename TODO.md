@@ -35,7 +35,8 @@
 	methor: POST
 	action: add.php
 	data:
-		name, price, category, pic, content
+		name, price, category, upload_file, content
+		// category 为数字 1,2,3,4 分别对应四个类别 chinese western fruit dessert
 		action = add
 
 	result:
@@ -63,6 +64,7 @@
 	action: delete.php
 	data:
 		id = 1|2|3   // 用'|'分隔
+		category = 1 // category 为数字 1,2,3,4 分别对应四个类别
 		action = delete
 
 	result:
@@ -86,6 +88,23 @@
 ### 7.管理订单
 
 	$orders = array("oid", "uid", "fids", "time", "price", "ano", "pno", "status" )
+	// fids = array( [1] = {1|2|3} , [2] = {}, [3] = {}, [4] = {} )
+	// status: 1.下单 2.运送 3.接收	
+
+	methor: GET
+	action: order_manage.php
+	data:
+		// 默认全部输出
+		num  // 每页数
+		page // 页号
+
+	result:
+		成功: $orders = array("oid", "uid", "fids", "time", "price", "ano", "pno", "status" )
+		失败: 
+
+### 8.管理用户
+
+	$users = array("uid", "openid", "anos"=array(), "pnos"=array() )
 
 	methor: GET
 	action: food.php
@@ -94,12 +113,9 @@
 		num  // 每页数
 		page // 页号
 
-
 	result:
-		成功: $orders = array("oid", "uid", "fids", "time", "price", "ano", "pno", "status" )
+		成功: $users = array("uid", "openid", "anos"=array(), "pnos"=array() )
 		失败: 
-
-
 
 ### 7.设置菜
 #### 1) 得到菜单
@@ -128,6 +144,7 @@
 ### 微信点菜
 #### 1.查看今日菜单
 
+	food = array("id", "name", "price", "pic", "content", "recommond")
 	methor: GET
 	action: today.php
 	data:
@@ -140,6 +157,7 @@
 
 
 #### 2.点单
+
 
 	$addresses = array(ano, address )
 	$phones = array(pno, phone)

@@ -42,6 +42,16 @@ class user{
 	    return true;
 	}
 */
+	function getAllUser() {
+		$sql = "SELECT * FROM `$this->tblName`";
+		if($this->db->query($sql)){
+			return $this->db->fetchAll();
+		}
+		else{
+			return false;
+		}
+	}
+
 	function getUser($openid) {
 		$sql = "SELECT * FROM `$this->tblName` 
 				WHERE `openid` = '$openid'";
@@ -80,8 +90,6 @@ class user{
 		else{
 			return false;
 		}
-		
-		
 	}
 
 	function delUser($id) {

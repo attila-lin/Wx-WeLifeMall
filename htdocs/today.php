@@ -7,32 +7,26 @@
 
 require 'init.php';
 
-//  防止全局变量造成安全隐患
-$isLogin = false;
-//  启动会话，这步必不可少
-session_start();
-
-if(!admin::isLogin()) {
-	forward("login.php");
-}
+$smarty = new Smarty;
 
 // **********************************
-// ### 3.添加菜
-// methor: POST
-// action: add.php
-// data:
-// 	name, price, category, upload_file, content
-// 	// category 为数字 1,2,3,4 分别对应四个类别 chinese western fruit dessert
-// 	action = add
-// result:
-// 	成功: $log = 1
-// 	失败: $log = 0
+// ### 微信点菜
+// #### 1.查看今日菜单
+//  food = array("id", "name", "price", "pic", "content", "recommond")
+// 	methor: GET
+// 	action: today.php
+// 	data:
+// 		// category 为数字 1,2,3,4 分别对应四个类别
+// 		category
+// 	result:
+// 		成功: $log = 1
+// 		失败: $log = 0
 // **********************************
 
-
-if (isset($_POST['action']) && $_POST['action'] == "add") {
+if(!isset($_GET['category'])){
+	$_GET['category'] = '1'; // 设置默认界面为chinese
 	$db = new db(DB_HOST, DB_USER, DB_PWD, DB_NAME);
-	switch ($_POST['category']) {
+	switch ($_GET['category']) {
 		case '1':
 			$category = 'chinese';
 			break;
@@ -49,22 +43,11 @@ if (isset($_POST['action']) && $_POST['action'] == "add") {
 			break;
 	}
 	$food = new food($db, $category);
-	$pic = uploadPic();
-
-	$name = $_POST['name'];
-	$price = $_POST['price'];
-	$content = $_POST['content'];
-
-	$log = $food->addFood($name, $price, $pic, $content);
-	if($log){
-
-	}
-	else{
-		
-	}
+	$foods = $food->getRecommond();
+	$smarty->assign("food", $foods);
 }
 
-$smarty = new Smarty;
+
 
 $smarty->setTemplateDir(WE_TEMPLATE_DIR);
 $smarty->setCompileDir(WE_COMPILE_DIR);
@@ -78,5 +61,4 @@ $smarty->setCacheDir(WE_CACHE_DIR);
 // $smarty->caching = true;
 // $smarty->cache_lifetime = 120;
 
-$smarty->display('add.html');
-
+$smarty->display('today.html');

@@ -1,5 +1,7 @@
 <?php
 
+
+
 class order{
 	private $db;
 	private $tblName;
@@ -9,6 +11,39 @@ class order{
 		$this->db 		= $db;
 		$this->tblName = "order";
 		$this->fieldList= array("oid", "uid", "fids", "time", "price", "ano", "pno", "status");
+	}
+
+	// $fidsstring = "1:2|2:3|3:3"
+	function getFidArray($fidsstring){ 
+		$fids = array( 1 => array(), 2 => array(), 3 => array(), 4 => array());
+		$fidstring = split("|", $fidsstring);
+		foreach ($fidarray as $key => $value) {  // $value = "1:2"
+			$fid = split(":", $fidsstring);
+			switch (intval($fid[0])) {				// $fid[0] = 1 2 3
+			 	case 1:
+			 		array_push($fids[1], $fid[1]);  // $fid[1] = 2 
+			 		break;
+			 	case 2:
+			 		array_push($fids[2], $fid[1]);  // $fid[1] =   3
+			 		break;
+			 	case 3:
+			 		array_push($fids[3], $fid[1]);  // $fid[1] =     3
+			 		break;
+			 	case 4:
+			 		array_push($fids[4], $fid[1]);  
+			 		break;
+			 	default:
+			 		break;
+			 }
+		}
+
+		return $fids;
+	}
+
+	function getAllOrder() {
+		$sql = "SELECT * FROM `$this->tblName`";
+		$this->db->query($sql);
+		return $this->db->fetchAll();
 	}
 
 	function getOrder($id) {

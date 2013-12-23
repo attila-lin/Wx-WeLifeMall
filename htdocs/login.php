@@ -5,11 +5,9 @@
  * @package Example-application
  */
 
-
-
-require 'libs/Smarty.class.php';
 require 'init.php';
 
+session_start();
 
 
 $smarty = new Smarty;
@@ -26,4 +24,4 @@ $smarty->setCacheDir(WE_CACHE_DIR);
 // $smarty->caching = true;
 // $smarty->cache_lifetime = 120;
 
-$smarty->display('today_menu.html');
+$smarty->display('login.html');

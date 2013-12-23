@@ -12,7 +12,7 @@ require_once(WE_CLASS_DIR . "/class.order.php");
 require_once(WE_CLASS_DIR . "/class.phone.php");
 require_once(WE_CLASS_DIR . "/class.user.php");
 
-
+require_once(WE_ROOT . "/libs/Smarty.class.php");
 //自动加载
 // function WEClassAutoload($classname)
 // {

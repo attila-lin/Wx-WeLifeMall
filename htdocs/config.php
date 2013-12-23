@@ -5,13 +5,13 @@
 @define("DB_NAME", "hdm0620114_db");
 
 
-@define("WE_ROOT", dirname(__FILE__) . "/");			
-@define("WE_CLASS_DIR", WE_ROOT . "class/");	
+@define("WE_ROOT", 		dirname(__FILE__) . "/");			
+@define("WE_CLASS_DIR", 	WE_ROOT . "class/");	
 // about smarty
-@define("WE_TEMPLATE_DIR", WE_ROOT . "../templates/");	
-@define("WE_COMPILE_DIR", WE_ROOT . "../templates_c/");	
-@define("WE_CONFIG_DIR", WE_ROOT . "../configs/");	
-@define("WE_CACHE_DIR", WE_ROOT . "../cache/");
+@define("WE_TEMPLATE_DIR", 	WE_ROOT . "templates/");	
+@define("WE_COMPILE_DIR", 	WE_ROOT . "templates_c/");	
+@define("WE_CONFIG_DIR", 	WE_ROOT . "configs/");	
+@define("WE_CACHE_DIR", 	WE_ROOT . "cache/");
 
 // 用户模式：当true:有缓存;false:无缓存
 @define("USE_MOD", true);

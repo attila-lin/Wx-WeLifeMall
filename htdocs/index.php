@@ -8,6 +8,8 @@
 require 'libs/Smarty.class.php';
 require 'init.php';
 
+$admin = new admin($db);
+
 $smarty = new Smarty;
 
 $smarty->setTemplateDir(WE_TEMPLATE_DIR);

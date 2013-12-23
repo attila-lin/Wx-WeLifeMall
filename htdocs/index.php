@@ -5,10 +5,8 @@
  * @package Example-application
  */
 
-require 'libs/Smarty.class.php';
-require 'init.php';
 
-$admin = new admin($db);
+require 'init.php';
 
 $smarty = new Smarty;
 

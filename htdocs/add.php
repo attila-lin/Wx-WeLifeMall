@@ -5,8 +5,8 @@
  * @package Example-application
  */
 
-require 'libs/Smarty.class.php';
 require 'init.php';
+require 'login.php';
 
 $smarty = new Smarty;
 

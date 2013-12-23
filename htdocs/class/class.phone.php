@@ -6,9 +6,9 @@ class phone{
 	private $fieldList;
 
 	function phone($db){
-		$this->$db 		= $db;
-		$this->$tblName = "phone";
-		$this->$fieldList= array("pno", "uid", "phone");
+		$this->db 		= $db;
+		$this->tblName = "phone";
+		$this->fieldList= array("pno", "uid", "phone");
 	}
 
 	function getPhone($id) {

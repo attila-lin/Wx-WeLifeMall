@@ -6,9 +6,9 @@ class address{
 	private $fieldList;
 
 	function address($db){
-		$this->$db 		= $db;
-		$this->$tblName = "address";
-		$this->$fieldList= array("ano", "uid", "address");
+		$this->db 		= $db;
+		$this->tblName = "address";
+		$this->fieldList= array("ano", "uid", "address");
 	}
 
 	function getAddr($id) {

@@ -3,7 +3,7 @@
 require_once(dirname(__FILE__) . "/config.php");
 
 require_once(WE_ROOT . "/function.php");
-// add class
+// add classes
 require_once(WE_CLASS_DIR . "/class.db.php");
 require_once(WE_CLASS_DIR . "/class.admin.php");
 require_once(WE_CLASS_DIR . "/class.address.php");
@@ -12,7 +12,9 @@ require_once(WE_CLASS_DIR . "/class.order.php");
 require_once(WE_CLASS_DIR . "/class.phone.php");
 require_once(WE_CLASS_DIR . "/class.user.php");
 
+// smarty library
 require_once(WE_ROOT . "/libs/Smarty.class.php");
+
 //自动加载
 // function WEClassAutoload($classname)
 // {

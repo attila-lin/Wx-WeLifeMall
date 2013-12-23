@@ -242,5 +242,27 @@ function TrimMsg($msg) {
     return addslashes ( $msg );
 }
 
+function forward($url, $param=null)
+{
+    $headerStr = "Location: $url";
+    $paramStr = "";
+    if($param != null && is_array($param))
+    {
+        $paramStr = "?";
+        $flag = 0;
+        foreach($param as $key=>$val)
+        {
+            if($flag == 0)
+            {
+                $paramStr .= "$key=$val";
+                $flag = 1;
+            }
+            else
+                $paramStr .= "&$key=$val";
+        }
 
+    }
+
+    header($headerStr . $paramStr);
+}
 ?>

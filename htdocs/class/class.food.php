@@ -6,9 +6,9 @@ class food{
 	private $fieldList;
 
 	function food($db){
-		$this->$db 		= $db;
-		$this->$tblName = "food";
-		$this->$fieldList= array("fid", "fname", "fprice", "category", "fpic", "fcontent");
+		$this->db 		= $db;
+		$this->tblName = "food";
+		$this->fieldList= array("fid", "fname", "fprice", "category", "fpic", "fcontent");
 	}
 
 	function getFood($id) {

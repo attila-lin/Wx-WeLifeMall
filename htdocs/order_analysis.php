@@ -6,7 +6,6 @@
  * @package Example-application
  */
 
-require 'libs/Smarty.class.php';
 require 'init.php';
 
 $smarty = new Smarty;

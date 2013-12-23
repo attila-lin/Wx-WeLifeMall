@@ -13,7 +13,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address` (
     `ano` int(8) NOT NULL AUTO_INCREMENT,
-    `openid` char(40) NOT NULL,
+    `uid` char(8) NOT NULL,
     `address`  char(80) NOT NULL,
     PRIMARY KEY (`ano`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;

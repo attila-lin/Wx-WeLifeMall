@@ -8,11 +8,11 @@ class user{
 	private $phone;
 
 	function user($db){
-		$this->$db 		= $db;
-		$this->$tblName = "user";
+		$this->db 		= $db;
+		$this->tblName = "user";
 		// $this->$fieldList= array("uid", "openid", "uname", "upwd"); 
 		// 暂时只要openid
-		$this->$fieldList= array("uid", "openid"); 
+		$this->fieldList= array("uid", "openid"); 
 	}
 /*
 	function login($name, $pwd){

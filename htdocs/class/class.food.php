@@ -5,24 +5,25 @@ class food{
 	private $tblName;
 	private $fieldList;
 
-	function food($db){
+	function food($db ,$category){
 		$this->db 		= $db;
-		$this->tblName = "food";
-		$this->fieldList= array("fid", "fname", "fprice", "category", "fpic", "fcontent");
+		// chinese western fruit dessert
+		$this->tblName = $category;
+		$this->fieldList= array("id", "name", "price", "pic", "content", "recommond");
 	}
 
 	function getFood($id) {
 		$sql = "SELECT * FROM `$this->tblName` 
-				WHERE `fid` = '$id'";
+				WHERE `id` = '$id'";
 		$this->db->query($sql);
 		return $this->db->fetchRow();
 	}
 
 	function editFood($id, $name, $price, $category, $pic, $content) {
 		$sql = "UPDATE `$this->tblName`
-				SET `fname` = '$name', `fprice` = '$price', `category` = '$category',
-				    `fpic` = '$pic', `fcontent` = '$content', 
-				WHERE `fid` = '$id'";
+				SET `name` = '$name', `price` = '$price', 
+				    `pic` = '$pic', `content` = '$content', 
+				WHERE `id` = '$id'";
 		if($this->db->query($sql))
 			return true;
 		else
@@ -45,7 +46,7 @@ class food{
 		else{
 			$tmp = "= $id";
 		}
-		$sql = "DELETE FROM `$this->tblName` WHERE `fid` " . $tmp ;
+		$sql = "DELETE FROM `$this->tblName` WHERE `id` " . $tmp ;
 		$this->db->query($sql);
 
 		return $this->db->affectedRows();

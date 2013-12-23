@@ -6,7 +6,6 @@
  */
 
 require 'init.php';
-require 'login.php';
 
 $smarty = new Smarty;
 

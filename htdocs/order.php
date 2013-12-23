@@ -9,7 +9,6 @@ require 'init.php';
 
 $smarty = new Smarty;
 
-
 $smarty->setTemplateDir(WE_TEMPLATE_DIR);
 $smarty->setCompileDir(WE_COMPILE_DIR);
 $smarty->setConfigDir(WE_CONFIG_DIR);

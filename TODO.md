@@ -3,7 +3,7 @@
 
 ## 后台管理
 
-例如已经完成的**登陆**
+例如已经完成的**登陆** 
 
 ### 1.登陆
 
@@ -141,8 +141,8 @@
 		失败: $log = 0
 
 
-### 微信点菜
-#### 1.查看今日菜单
+## 微信点菜
+### 1.查看今日菜单
 
 	food = array("id", "name", "price", "pic", "content", "recommond")
 	methor: GET
@@ -156,8 +156,7 @@
 		失败: $log = 0
 
 
-#### 2.点单
-
+### 2.点单
 
 	$addresses = array(ano, address )
 	$phones = array(pno, phone)

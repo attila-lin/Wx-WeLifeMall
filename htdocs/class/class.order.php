@@ -8,7 +8,7 @@ class order{
 	function order($db){
 		$this->$db 		= $db;
 		$this->$tblName = "order";
-		$this->$fieldList= array("oid", "uid", "fids", "time", "price", "ano", "pno","status");
+		$this->$fieldList= array("oid", "uid", "fids", "time", "price", "ano", "pno", "status");
 	}
 
 	function getOrder($id) {

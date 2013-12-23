@@ -1,4 +1,25 @@
-﻿<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.15, created on 2013-12-23 17:46:45
+         compiled from "/var/www/wx-welifemall/templates/delivery.html" */ ?>
+<?php /*%%SmartyHeaderCode:130690484952b80685c50495-80534219%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '1488523101217c6814540c0533fa1d7870f3585c' => 
+    array (
+      0 => '/var/www/wx-welifemall/templates/delivery.html',
+      1 => 1387791912,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '130690484952b80685c50495-80534219',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_52b80685c8d878_00985629',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_52b80685c8d878_00985629')) {function content_52b80685c8d878_00985629($_smarty_tpl) {?>﻿<!DOCTYPE html>
 
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 
@@ -451,4 +472,4 @@
 
 <!-- END BODY -->
 
-</html>
+</html><?php }} ?>

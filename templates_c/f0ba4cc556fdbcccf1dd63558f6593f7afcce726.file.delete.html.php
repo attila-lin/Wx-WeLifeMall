@@ -1,4 +1,25 @@
-﻿<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.15, created on 2013-12-23 17:47:10
+         compiled from "/var/www/wx-welifemall/templates/delete.html" */ ?>
+<?php /*%%SmartyHeaderCode:9123267652b8069e8f8d56-00479081%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'f0ba4cc556fdbcccf1dd63558f6593f7afcce726' => 
+    array (
+      0 => '/var/www/wx-welifemall/templates/delete.html',
+      1 => 1387791899,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '9123267652b8069e8f8d56-00479081',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_52b8069e934187_30989555',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_52b8069e934187_30989555')) {function content_52b8069e934187_30989555($_smarty_tpl) {?>﻿<!DOCTYPE html>
 
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 
@@ -42,7 +63,35 @@
 
 	<!-- BEGIN PAGE LEVEL STYLES -->
 
-	<link href="media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="media/css/bootstrap-fileupload.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/jquery.gritter.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/chosen.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/select2_metro.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/jquery.tagsinput.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/clockface.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/bootstrap-wysihtml5.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/datepicker.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/timepicker.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/colorpicker.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/bootstrap-toggle-buttons.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/daterangepicker.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/datetimepicker.css" />
+
+	<link rel="stylesheet" type="text/css" href="media/css/multi-select-metro.css" />
+
+	<link href="media/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
 
 	<!-- END PAGE LEVEL STYLES -->
 
@@ -154,7 +203,7 @@
 
 				</li>
 
-				<li class="active ">
+				<li class=" ">
 
 					<a href="javascript:;">
 
@@ -162,9 +211,7 @@
 
 					<span class="title">订单管理</span>
 
-					<span class="selected"></span>
-
-					<span class="arrow open"></span>
+					<span class="arrow"></span>
 
 					</a>
 
@@ -186,7 +233,7 @@
 
 						</li>
 
-						<li class="active">
+						<li >
 
 							<a href="delivery.php">
 
@@ -194,7 +241,7 @@
 
 						</li>
 
-						<li >
+						<li>
 
 							<a href="fees.php">
 
@@ -206,27 +253,29 @@
 
 				</li>
 
-	<li>
+	<li class="active ">
 
 					<a class="active" href="javascript:;">
 
 					<i class="icon-sitemap"></i> 
 
 					<span class="title">产品管理</span>
-
-					<span class="arrow "></span>
+					
+					<span class="selected"></span>
+					
+					<span class="arrow open"></span>
 
 					</a>
 
 					<ul class="sub-menu">
 
-						<li>
+						<li class="active ">
 
 							<a href="javascript:;">
 
 							菜品管理
 
-							<span class="arrow"></span>
+							<span class="arrow open"></span>
 
 							</a>
 
@@ -234,7 +283,7 @@
 
 								<li><a href="add.php">添加菜品</a></li>
 
-								<li><a href="delete.php">删除菜品</a></li>
+								<li  class="active" ><a href="delete.php">删除菜品</a></li>
 
 								<li><a href="change.php">修改菜品</a></li>
 
@@ -285,7 +334,7 @@
 
 						<h3 class="page-title">
 
-							订单管理 <small>快递员</small>
+							产品管理 <small>删除菜品</small>
 
 						</h3>
 
@@ -303,13 +352,21 @@
 
 							<li>
 
-								<a href="#">订单管理</a>
+								<a href="#">产品管理</a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+							
+							<li>
+
+								<a href="#">菜品管理</a>
 
 								<i class="icon-angle-right"></i>
 
 							</li>
 
-							<li><a href="#">快递员</a></li>
+							<li><a href="#">删除菜品</a></li>
 
 						</ul>
 
@@ -320,14 +377,26 @@
 				</div>
 
 				<!-- END PAGE HEADER-->
+								
+             <!-- BEGIN PORTLET-->   
 
-			<!-- BEGIN SAMPLE FORM PORTLET-->   
-
-						<div class="portlet box blue">
+						<div class="portlet box green">
 
 							<div class="portlet-title">
 
-								<div class="caption"><i class="icon-reorder"></i>快递员</div>
+								<div class="caption"><i class="icon-reorder"></i>删除菜品</div>
+
+								<div class="tools">
+
+									<a href="javascript:;" class="collapse"></a>
+
+									<a href="#portlet-config" data-toggle="modal" class="config"></a>
+
+									<a href="javascript:;" class="reload"></a>
+
+									<a href="javascript:;" class="remove"></a>
+
+								</div>
 
 							</div>
 
@@ -335,38 +404,72 @@
 
 								<!-- BEGIN FORM-->
 
-								<form action="#" class="form-horizontal">						
+								<form action="#" class="form-horizontal">
 
 									<div class="control-group">
 
-										<label class="control-label">快递员</label>
+										<label class="control-label">选择删除的菜品</label>
 
 										<div class="controls">
 
-											<textarea class="span6 m-wrap" rows="3"></textarea>
+											<select multiple="multiple" id="my_multi_select1" name="my_multi_select1[]">
+
+												<option>Dallas Cowboys</option>
+
+												<option>New York Giants</option>
+
+												<option>Philadelphia Eagles</option>
+
+												<option>Washington Redskins</option>
+
+												<option>Chicago Bears</option>
+
+												<option>Detroit Lions</option>
+
+												<option>Green Bay Packers</option>
+
+												<option>Minnesota Vikings</option>
+
+												<option>Atlanta Falcons</option>
+
+												<option>Carolina Panthers</option>
+
+												<option>New Orleans Saints</option>
+
+												<option>Tampa Bay Buccaneers</option>
+
+												<option>Arizona Cardinals</option>
+
+												<option>St. Louis Rams</option>
+
+												<option>San Francisco 49ers</option>
+
+												<option>Seattle Seahawks</option>
+
+											</select>
 
 										</div>
 
 									</div>
-
-									<div class="form-actions">
+                                    
+                                    <div class="form-actions">
 
 										<button type="submit" class="btn blue">提交</button>
 
 										<button type="button" class="btn">取消</button>                            
 
 									</div>
-
 								</form>
 
-								<!-- END FORM-->       
+								<!-- END FORM-->  
 
 							</div>
 
 						</div>
+						
+									
 
-						<!-- END SAMPLE FORM PORTLET-->
-
+						<!-- END PORTLET-->
 			</div>
 
 			<!-- END PAGE CONTAINER-->       
@@ -378,7 +481,6 @@
 	</div>
 
 	<!-- END CONTAINER -->
-
 
 
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
@@ -415,11 +517,45 @@
 
 	<!-- BEGIN PAGE LEVEL PLUGINS -->
 
-	<script type="text/javascript" src="media/js/jquery.gritter.js"></script>
+	<script type="text/javascript" src="media/js/ckeditor.js"></script>  
 
-	<script type="text/javascript" src="media/js/jquery.pulsate.min.js"></script>
+	<script type="text/javascript" src="media/js/bootstrap-fileupload.js"></script>
 
-	<script type="text/javascript" src="media/js/jquery.bootpag.min.js"></script>
+	<script type="text/javascript" src="media/js/chosen.jquery.min.js"></script>
+
+	<script type="text/javascript" src="media/js/select2.min.js"></script>
+
+	<script type="text/javascript" src="media/js/wysihtml5-0.3.0.js"></script> 
+
+	<script type="text/javascript" src="media/js/bootstrap-wysihtml5.js"></script>
+
+	<script type="text/javascript" src="media/js/jquery.tagsinput.min.js"></script>
+
+	<script type="text/javascript" src="media/js/jquery.toggle.buttons.js"></script>
+
+	<script type="text/javascript" src="media/js/bootstrap-datepicker.js"></script>
+
+	<script type="text/javascript" src="media/js/bootstrap-datetimepicker.js"></script>
+
+	<script type="text/javascript" src="media/js/clockface.js"></script>
+
+	<script type="text/javascript" src="media/js/date.js"></script>
+
+	<script type="text/javascript" src="media/js/daterangepicker.js"></script> 
+
+	<script type="text/javascript" src="media/js/bootstrap-colorpicker.js"></script>  
+
+	<script type="text/javascript" src="media/js/bootstrap-timepicker.js"></script>
+
+	<script type="text/javascript" src="media/js/jquery.inputmask.bundle.min.js"></script>   
+
+	<script type="text/javascript" src="media/js/jquery.input-ip-address-control-1.0.min.js"></script>
+
+	<script type="text/javascript" src="media/js/jquery.multi-select.js"></script>   
+
+	<script src="media/js/bootstrap-modal.js" type="text/javascript" ></script>
+
+	<script src="media/js/bootstrap-modalmanager.js" type="text/javascript" ></script> 
 
 	<!-- END PAGE LEVEL PLUGINS -->
 
@@ -427,7 +563,7 @@
 
 	<script src="media/js/app.js"></script>
 
-	<script src="media/js/ui-general.js"></script>     
+	<script src="media/js/form-components.js"></script>     
 
 	<!-- END PAGE LEVEL SCRIPTS -->
 
@@ -439,16 +575,16 @@
 
 		   App.init();
 
-		   UIGeneral.init();
+		   FormComponents.init();
 
 		});
 
 	</script>
 
-	<!-- END JAVASCRIPTS -->
+	<!-- END JAVASCRIPTS -->   
 
 <script type="text/javascript">  var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-37564768-1']);  _gaq.push(['_setDomainName', 'keenthemes.com']);  _gaq.push(['_setAllowLinker', true]);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script></body>
 
 <!-- END BODY -->
 
-</html>
+</html><?php }} ?>

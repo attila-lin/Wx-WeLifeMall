@@ -1,4 +1,25 @@
-﻿<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.15, created on 2013-12-23 17:46:42
+         compiled from "/var/www/wx-welifemall/templates/order_analysis.html" */ ?>
+<?php /*%%SmartyHeaderCode:130524822252b80682ecff83-99103772%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'dd8a4bb9b2d1b78d1aad3e60d0cc1d790920dff0' => 
+    array (
+      0 => '/var/www/wx-welifemall/templates/order_analysis.html',
+      1 => 1387791956,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '130524822252b80682ecff83-99103772',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_52b80682f0a895_61416150',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_52b80682f0a895_61416150')) {function content_52b80682f0a895_61416150($_smarty_tpl) {?>﻿<!DOCTYPE html>
 
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 
@@ -178,7 +199,7 @@
 
 						</li>
 
-						<li >
+						<li class="active">
 
 							<a href="order_analysis.php">
 
@@ -186,7 +207,7 @@
 
 						</li>
 
-						<li class="active">
+						<li >
 
 							<a href="delivery.php">
 
@@ -285,7 +306,7 @@
 
 						<h3 class="page-title">
 
-							订单管理 <small>快递员</small>
+							订单管理 <small>订单统计</small>
 
 						</h3>
 
@@ -309,7 +330,7 @@
 
 							</li>
 
-							<li><a href="#">快递员</a></li>
+							<li><a href="#">订单统计</a></li>
 
 						</ul>
 
@@ -321,51 +342,97 @@
 
 				<!-- END PAGE HEADER-->
 
-			<!-- BEGIN SAMPLE FORM PORTLET-->   
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+					<!-- BEGIN SAMPLE TABLE PORTLET-->
 
 						<div class="portlet box blue">
 
 							<div class="portlet-title">
 
-								<div class="caption"><i class="icon-reorder"></i>快递员</div>
+								<div class="caption"><i class="icon-cogs"></i>订单统计</div>
 
 							</div>
 
-							<div class="portlet-body form">
+							<div class="portlet-body flip-scroll">
 
-								<!-- BEGIN FORM-->
+								<table class="table-bordered table-striped table-condensed flip-content">
 
-								<form action="#" class="form-horizontal">						
+									<thead class="flip-content">
 
-									<div class="control-group">
+										<tr>
 
-										<label class="control-label">快递员</label>
+											<th>序号</th>
 
-										<div class="controls">
+											<th class="numeric">订单号</th>
 
-											<textarea class="span6 m-wrap" rows="3"></textarea>
+											<th>收货人</th>
 
-										</div>
+											<th>收货人电话</th>
 
-									</div>
+											<th>收货地址</th>
 
-									<div class="form-actions">
+											<th>操作员</th>
 
-										<button type="submit" class="btn blue">提交</button>
+											<th class="numeric">商品金额</th>
 
-										<button type="button" class="btn">取消</button>                            
+											<th class="numeric">运费</th>
 
-									</div>
+											<th class="numeric">实付余额</th>
 
-								</form>
+											<th>日期</th>
+											<th>送达时间</th>
+										</tr>
 
-								<!-- END FORM-->       
+									</thead>
+
+									<tbody>
+
+										<tr>
+
+											<td>序号</td>
+
+											<td class="numeric">订单号</td>
+
+											<td>收货人</td>
+
+											<td>收货人电话</td>
+
+											<td>收货地址</td>
+
+											<td>操作员</td>
+
+											<td class="numeric">商品金额</td>
+
+											<td class="numeric">运费</td>
+
+											<td class="numeric">实付余额</td>
+
+											<td>日期</td>
+											
+											<td>送达时间</td>
+
+										</tr>
+
+									</tbody>
+
+								</table>
 
 							</div>
 
 						</div>
 
-						<!-- END SAMPLE FORM PORTLET-->
+						<!-- END SAMPLE TABLE PORTLET-->
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE CONTENT-->
 
 			</div>
 
@@ -378,7 +445,6 @@
 	</div>
 
 	<!-- END CONTAINER -->
-
 
 
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
@@ -451,4 +517,4 @@
 
 <!-- END BODY -->
 
-</html>
+</html><?php }} ?>

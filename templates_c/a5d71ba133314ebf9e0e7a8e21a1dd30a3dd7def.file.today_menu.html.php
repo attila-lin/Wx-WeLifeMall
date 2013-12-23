@@ -1,4 +1,25 @@
-﻿<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.15, created on 2013-12-23 17:47:16
+         compiled from "/var/www/wx-welifemall/templates/today_menu.html" */ ?>
+<?php /*%%SmartyHeaderCode:47139882452b806a4534412-62770363%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'a5d71ba133314ebf9e0e7a8e21a1dd30a3dd7def' => 
+    array (
+      0 => '/var/www/wx-welifemall/templates/today_menu.html',
+      1 => 1387791978,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '47139882452b806a4534412-62770363',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_52b806a4565f22_75297342',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_52b806a4565f22_75297342')) {function content_52b806a4565f22_75297342($_smarty_tpl) {?>﻿<!DOCTYPE html>
 
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 
@@ -75,6 +96,10 @@
 	<!-- END PAGE LEVEL STYLES -->
 
 	<link rel="shortcut icon" href="media/image/favicon.ico" />
+
+</head>
+
+</html>
 
 </head>
 
@@ -182,7 +207,7 @@
 
 				</li>
 
-				<li class=" ">
+				<li>
 
 					<a href="javascript:;">
 
@@ -220,7 +245,7 @@
 
 						</li>
 
-						<li>
+						<li  >
 
 							<a href="fees.php">
 
@@ -232,29 +257,29 @@
 
 				</li>
 
-	<li class="active ">
+	<li class="active">
 
 					<a class="active" href="javascript:;">
 
 					<i class="icon-sitemap"></i> 
 
 					<span class="title">产品管理</span>
-					
+										
 					<span class="selected"></span>
-					
+
 					<span class="arrow open"></span>
 
 					</a>
 
 					<ul class="sub-menu">
 
-						<li class="active ">
+						<li>
 
 							<a href="javascript:;">
 
 							菜品管理
 
-							<span class="arrow open"></span>
+							<span class="arrow"></span>
 
 							</a>
 
@@ -262,7 +287,7 @@
 
 								<li><a href="add.php">添加菜品</a></li>
 
-								<li  class="active" ><a href="delete.php">删除菜品</a></li>
+								<li><a href="delete.php">删除菜品</a></li>
 
 								<li><a href="change.php">修改菜品</a></li>
 
@@ -270,7 +295,7 @@
 
 						</li>
 
-						<li>
+						<li class="active">
 
 							<a href="today_menu.php">
 
@@ -313,7 +338,7 @@
 
 						<h3 class="page-title">
 
-							产品管理 <small>删除菜品</small>
+							产品管理 <small>今日菜单设置</small>
 
 						</h3>
 
@@ -336,16 +361,8 @@
 								<i class="icon-angle-right"></i>
 
 							</li>
-							
-							<li>
 
-								<a href="#">菜品管理</a>
-
-								<i class="icon-angle-right"></i>
-
-							</li>
-
-							<li><a href="#">删除菜品</a></li>
+							<li><a href="#">今日菜单设置</a></li>
 
 						</ul>
 
@@ -356,26 +373,12 @@
 				</div>
 
 				<!-- END PAGE HEADER-->
-								
-             <!-- BEGIN PORTLET-->   
 
-						<div class="portlet box green">
+				<div class="portlet box blue">
 
 							<div class="portlet-title">
 
-								<div class="caption"><i class="icon-reorder"></i>删除菜品</div>
-
-								<div class="tools">
-
-									<a href="javascript:;" class="collapse"></a>
-
-									<a href="#portlet-config" data-toggle="modal" class="config"></a>
-
-									<a href="javascript:;" class="reload"></a>
-
-									<a href="javascript:;" class="remove"></a>
-
-								</div>
+								<div class="caption"><i class="icon-reorder"></i>中式</div>
 
 							</div>
 
@@ -387,7 +390,32 @@
 
 									<div class="control-group">
 
-										<label class="control-label">选择删除的菜品</label>
+										<label class="control-label">今日推荐</label>
+
+										<div class="controls">
+
+											<select class="span6 m-wrap" data-placeholder="Choose a Category" tabindex="1">
+
+												<option value="">选择...</option>
+
+												<option value="Category 1">中式</option>
+
+												<option value="Category 2">西式</option>
+
+												<option value="Category 3">水果</option>
+
+												<option value="Category 4">甜品</option>
+
+											</select>
+
+										</div>
+
+									</div>
+																								
+
+									<div class="control-group">
+
+										<label class="control-label">选择今日菜品</label>
 
 										<div class="controls">
 
@@ -442,13 +470,311 @@
 
 								<!-- END FORM-->  
 
+							</div>   
+
+							
+			    </div>	
+				
+				<div class="portlet box green">
+
+							<div class="portlet-title">
+
+								<div class="caption"><i class="icon-reorder"></i>西式</div>
+
 							</div>
 
-						</div>
-						
-									
+							<div class="portlet-body form">
 
-						<!-- END PORTLET-->
+								<!-- BEGIN FORM-->
+
+								<form action="#" class="form-horizontal">
+
+									<div class="control-group">
+
+										<label class="control-label">今日推荐</label>
+
+										<div class="controls">
+
+											<select class="span6 m-wrap" data-placeholder="Choose a Category" tabindex="1">
+
+												<option value="">选择...</option>
+
+												<option value="Category 1">中式</option>
+
+												<option value="Category 2">西式</option>
+
+												<option value="Category 3">水果</option>
+
+												<option value="Category 4">甜品</option>
+
+											</select>
+
+										</div>
+
+									</div>
+																								
+
+									<div class="control-group">
+
+										<label class="control-label">选择今日菜品</label>
+
+										<div class="controls">
+
+											<select multiple="multiple" id="my_multi_select2" name="my_multi_select2[]">
+
+												<option>Dallas Cowboys</option>
+
+												<option>New York Giants</option>
+
+												<option>Philadelphia Eagles</option>
+
+												<option>Washington Redskins</option>
+
+												<option>Chicago Bears</option>
+
+												<option>Detroit Lions</option>
+
+												<option>Green Bay Packers</option>
+
+												<option>Minnesota Vikings</option>
+
+												<option>Atlanta Falcons</option>
+
+												<option>Carolina Panthers</option>
+
+												<option>New Orleans Saints</option>
+
+												<option>Tampa Bay Buccaneers</option>
+
+												<option>Arizona Cardinals</option>
+
+												<option>St. Louis Rams</option>
+
+												<option>San Francisco 49ers</option>
+
+												<option>Seattle Seahawks</option>
+
+											</select>
+
+										</div>
+
+									</div>
+                                    
+                                    <div class="form-actions">
+
+										<button type="submit" class="btn blue">提交</button>
+
+										<button type="button" class="btn">取消</button>                            
+
+									</div>
+								</form>
+
+								<!-- END FORM-->  
+
+							</div>   
+			
+			    </div>
+				
+				<div class="portlet box purple">
+
+							<div class="portlet-title">
+
+								<div class="caption"><i class="icon-reorder"></i>水果</div>
+
+							</div>
+
+							<div class="portlet-body form">
+
+								<!-- BEGIN FORM-->
+
+								<form action="#" class="form-horizontal">
+
+									<div class="control-group">
+
+										<label class="control-label">今日推荐</label>
+
+										<div class="controls">
+
+											<select class="span6 m-wrap" data-placeholder="Choose a Category" tabindex="1">
+
+												<option value="">选择...</option>
+
+												<option value="Category 1">中式</option>
+
+												<option value="Category 2">西式</option>
+
+												<option value="Category 3">水果</option>
+
+												<option value="Category 4">甜品</option>
+
+											</select>
+
+										</div>
+
+									</div>
+																								
+
+									<div class="control-group">
+
+										<label class="control-label">选择今日菜品</label>
+
+										<div class="controls">
+
+											<select multiple="multiple" id="my_multi_select3" name="my_multi_select3[]">
+
+												<option>Dallas Cowboys</option>
+
+												<option>New York Giants</option>
+
+												<option>Philadelphia Eagles</option>
+
+												<option>Washington Redskins</option>
+
+												<option>Chicago Bears</option>
+
+												<option>Detroit Lions</option>
+
+												<option>Green Bay Packers</option>
+
+												<option>Minnesota Vikings</option>
+
+												<option>Atlanta Falcons</option>
+
+												<option>Carolina Panthers</option>
+
+												<option>New Orleans Saints</option>
+
+												<option>Tampa Bay Buccaneers</option>
+
+												<option>Arizona Cardinals</option>
+
+												<option>St. Louis Rams</option>
+
+												<option>San Francisco 49ers</option>
+
+												<option>Seattle Seahawks</option>
+
+											</select>
+
+										</div>
+
+									</div>
+                                    
+                                    <div class="form-actions">
+
+										<button type="submit" class="btn blue">提交</button>
+
+										<button type="button" class="btn">取消</button>                            
+
+									</div>
+
+								</form>
+								<!-- END FORM-->  
+
+							</div>   
+							
+			    </div>
+				
+				<div class="portlet box red">
+
+							<div class="portlet-title">
+
+								<div class="caption"><i class="icon-reorder"></i>甜品</div>
+
+							</div>
+
+							<div class="portlet-body form">
+
+								<!-- BEGIN FORM-->
+							
+							<form action="#" class="form-horizontal">
+
+									<div class="control-group">
+
+										<label class="control-label">今日推荐</label>
+
+										<div class="controls">
+
+											<select class="span6 m-wrap" data-placeholder="Choose a Category" tabindex="1">
+
+												<option value="">选择...</option>
+
+												<option value="Category 1">中式</option>
+
+												<option value="Category 2">西式</option>
+
+												<option value="Category 3">水果</option>
+
+												<option value="Category 4">甜品</option>
+
+											</select>
+
+										</div>
+
+									</div>
+																								
+
+									<div class="control-group">
+
+										<label class="control-label">选择今日菜品</label>
+
+										<div class="controls">
+
+											<select multiple="multiple" id="my_multi_select4" name="my_multi_select4[]">
+
+												<option>Dallas Cowboys</option>
+
+												<option>New York Giants</option>
+
+												<option>Philadelphia Eagles</option>
+
+												<option>Washington Redskins</option>
+
+												<option>Chicago Bears</option>
+
+												<option>Detroit Lions</option>
+
+												<option>Green Bay Packers</option>
+
+												<option>Minnesota Vikings</option>
+
+												<option>Atlanta Falcons</option>
+
+												<option>Carolina Panthers</option>
+
+												<option>New Orleans Saints</option>
+
+												<option>Tampa Bay Buccaneers</option>
+
+												<option>Arizona Cardinals</option>
+
+												<option>St. Louis Rams</option>
+
+												<option>San Francisco 49ers</option>
+
+												<option>Seattle Seahawks</option>
+
+											</select>
+
+										</div>
+
+									</div>
+                                    
+                                    <div class="form-actions">
+
+										<button type="submit" class="btn blue">提交</button>
+
+										<button type="button" class="btn">取消</button>                            
+
+									</div>
+								</form>
+
+								<!-- END FORM-->  
+
+							</div>   
+							
+			    </div>
+
 			</div>
 
 			<!-- END PAGE CONTAINER-->       
@@ -461,11 +787,9 @@
 
 	<!-- END CONTAINER -->
 
-
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 
 	<!-- BEGIN CORE PLUGINS -->
-
 	<script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
 
 	<script src="media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
@@ -566,4 +890,4 @@
 
 <!-- END BODY -->
 
-</html>
+</html><?php }} ?>

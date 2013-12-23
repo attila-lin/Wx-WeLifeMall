@@ -1,4 +1,25 @@
-﻿<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.15, created on 2013-12-23 17:46:47
+         compiled from "/var/www/wx-welifemall/templates/fees.html" */ ?>
+<?php /*%%SmartyHeaderCode:120426570052b80687e9dfa7-37498890%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'e20aa038bf64bd6f3dae56ca2e871ba9cd284a96' => 
+    array (
+      0 => '/var/www/wx-welifemall/templates/fees.html',
+      1 => 1387791922,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '120426570052b80687e9dfa7-37498890',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_52b80687ecfbe2_32904573',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_52b80687ecfbe2_32904573')) {function content_52b80687ecfbe2_32904573($_smarty_tpl) {?>﻿<!DOCTYPE html>
 
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 
@@ -186,7 +207,7 @@
 
 						</li>
 
-						<li class="active">
+						<li >
 
 							<a href="delivery.php">
 
@@ -194,7 +215,7 @@
 
 						</li>
 
-						<li >
+						<li class="active" >
 
 							<a href="fees.php">
 
@@ -285,7 +306,7 @@
 
 						<h3 class="page-title">
 
-							订单管理 <small>快递员</small>
+							订单管理 <small>同城快递配送费用</small>
 
 						</h3>
 
@@ -309,7 +330,7 @@
 
 							</li>
 
-							<li><a href="#">快递员</a></li>
+							<li><a href="#">同城快递配送费用</a></li>
 
 						</ul>
 
@@ -321,13 +342,13 @@
 
 				<!-- END PAGE HEADER-->
 
-			<!-- BEGIN SAMPLE FORM PORTLET-->   
+	<!-- BEGIN SAMPLE FORM PORTLET-->   
 
 						<div class="portlet box blue">
 
 							<div class="portlet-title">
 
-								<div class="caption"><i class="icon-reorder"></i>快递员</div>
+								<div class="caption"><i class="icon-reorder"></i>同城快递配送费用</div>
 
 							</div>
 
@@ -339,7 +360,7 @@
 
 									<div class="control-group">
 
-										<label class="control-label">快递员</label>
+										<label class="control-label">费用</label>
 
 										<div class="controls">
 
@@ -378,7 +399,6 @@
 	</div>
 
 	<!-- END CONTAINER -->
-
 
 
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
@@ -451,4 +471,4 @@
 
 <!-- END BODY -->
 
-</html>
+</html><?php }} ?>

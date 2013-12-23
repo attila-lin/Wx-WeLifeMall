@@ -1,4 +1,25 @@
-﻿<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.15, created on 2013-12-23 17:47:07
+         compiled from "/var/www/wx-welifemall/templates/add.html" */ ?>
+<?php /*%%SmartyHeaderCode:48173648352b8069bcc4966-17945680%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'fe72299e653cfd4c87e8353ccbb3842f37b6b3c0' => 
+    array (
+      0 => '/var/www/wx-welifemall/templates/add.html',
+      1 => 1387791842,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '48173648352b8069bcc4966-17945680',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_52b8069bd01b36_59896874',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_52b8069bd01b36_59896874')) {function content_52b8069bd01b36_59896874($_smarty_tpl) {?>﻿<!DOCTYPE html>
 
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 
@@ -154,7 +175,7 @@
 
 				</li>
 
-				<li class="active ">
+				<li>
 
 					<a href="javascript:;">
 
@@ -162,9 +183,7 @@
 
 					<span class="title">订单管理</span>
 
-					<span class="selected"></span>
-
-					<span class="arrow open"></span>
+					<span class="arrow"></span>
 
 					</a>
 
@@ -186,7 +205,7 @@
 
 						</li>
 
-						<li class="active">
+						<li >
 
 							<a href="delivery.php">
 
@@ -194,7 +213,7 @@
 
 						</li>
 
-						<li >
+						<li class="active" >
 
 							<a href="fees.php">
 
@@ -206,33 +225,35 @@
 
 				</li>
 
-	<li>
+	<li class="active">
 
 					<a class="active" href="javascript:;">
 
 					<i class="icon-sitemap"></i> 
 
 					<span class="title">产品管理</span>
+					
+					<span class="selected"></span>
 
-					<span class="arrow "></span>
+					<span class="arrow open"></span>
 
 					</a>
 
 					<ul class="sub-menu">
 
-						<li>
+						<li class="active">
 
 							<a href="javascript:;">
 
 							菜品管理
 
-							<span class="arrow"></span>
+							<span class="arrow open"></span>
 
 							</a>
 
 							<ul class="sub-menu">
 
-								<li><a href="add.php">添加菜品</a></li>
+								<li class="active"><a href="add.php">添加菜品</a></li>
 
 								<li><a href="delete.php">删除菜品</a></li>
 
@@ -285,7 +306,7 @@
 
 						<h3 class="page-title">
 
-							订单管理 <small>快递员</small>
+							产品管理 <small>添加菜品</small>
 
 						</h3>
 
@@ -303,13 +324,21 @@
 
 							<li>
 
-								<a href="#">订单管理</a>
+								<a href="#">产品管理</a>
+
+								<i class="icon-angle-right"></i>
+
+							</li>
+							
+							<li>
+
+								<a href="#">菜品管理</a>
 
 								<i class="icon-angle-right"></i>
 
 							</li>
 
-							<li><a href="#">快递员</a></li>
+							<li><a href="#">添加菜品</a></li>
 
 						</ul>
 
@@ -321,13 +350,13 @@
 
 				<!-- END PAGE HEADER-->
 
-			<!-- BEGIN SAMPLE FORM PORTLET-->   
+				
 
 						<div class="portlet box blue">
 
 							<div class="portlet-title">
 
-								<div class="caption"><i class="icon-reorder"></i>快递员</div>
+								<div class="caption"><i class="icon-reorder"></i>添加菜品</div>
 
 							</div>
 
@@ -335,11 +364,63 @@
 
 								<!-- BEGIN FORM-->
 
-								<form action="#" class="form-horizontal">						
+								<form action="#" class="form-horizontal">
 
 									<div class="control-group">
 
-										<label class="control-label">快递员</label>
+										<label class="control-label">菜名</label>
+
+										<div class="controls">
+
+											<input type="text" class="span6 m-wrap" />
+
+										</div>
+
+									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">价格</label>
+
+										<div class="controls">
+
+											<div class="input-prepend input-append">
+
+												<span class="add-on">元</span><input class="m-wrap " type="text" /><span class="add-on"></span>
+
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">类型</label>
+
+										<div class="controls">
+
+											<select class="span6 m-wrap" data-placeholder="Choose a Category" tabindex="1">
+
+												<option value="">选择...</option>
+
+												<option value="Category 1">中式</option>
+
+												<option value="Category 2">西式</option>
+
+												<option value="Category 3">水果</option>
+
+												<option value="Category 4">甜品</option>
+
+											</select>
+
+										</div>
+
+									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">描述</label>
 
 										<div class="controls">
 
@@ -348,6 +429,44 @@
 										</div>
 
 									</div>
+
+									<div class="control-group">
+
+										<label class="control-label">上传菜品照片</label>
+
+										<div class="controls">
+
+											<div class="fileupload fileupload-new" data-provides="fileupload">
+
+												<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+
+													<img src="media/image/AAAAAA&amp;text=no+image" alt="" />
+
+												</div>
+
+												<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+
+												<div>
+
+													<span class="btn btn-file"><span class="fileupload-new">选择照片</span>
+
+													<span class="fileupload-exists">更改照片</span>
+
+													<input type="file" class="default" /></span>
+
+													<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">删除</a>
+
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+								
+
+							 
 
 									<div class="form-actions">
 
@@ -378,8 +497,6 @@
 	</div>
 
 	<!-- END CONTAINER -->
-
-
 
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 
@@ -451,4 +568,4 @@
 
 <!-- END BODY -->
 
-</html>
+</html><?php }} ?>

@@ -189,7 +189,7 @@
 	methor: POST
 	action: today_menu.php
 	data:
-		id = 1|2|3
+		id = 1:1|1:2|1:3  // 1:3中1表示chinese，3表示chinese的3号
 
 	result:
 		成功: $log = 1

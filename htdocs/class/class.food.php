@@ -12,6 +12,12 @@ class food{
 		$this->fieldList= array("id", "name", "price", "pic", "content", "recommond");
 	}
 
+	function getAllFood() {
+		$sql = "SELECT * FROM `$this->tblName`";
+		$this->db->query($sql);
+		return $this->db->fetchAll();
+	}
+
 	function getFood($id) {
 		$sql = "SELECT * FROM `$this->tblName` 
 				WHERE `id` = '$id'";

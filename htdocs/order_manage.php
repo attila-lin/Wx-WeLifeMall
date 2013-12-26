@@ -42,8 +42,12 @@ $db = new db(DB_HOST, DB_USER, DB_PWD, DB_NAME);
 $order = new order($db);
 $orders = $order->getAllOrder();
 foreach ($orders as $key => $value) {
-	$value['fids'] = $order->getFidArray($value['fids']); 
+	$fidvalue = $value['fids'];
+	$value['fids'] = array();
+	print_r($order->getFidArray($fidvalue));
+	$value['fids'] = $order->getFidArray($fidvalue); 
 }
+print_r($orders);
 
 if(!isset($_GET['num']))
 	$smarty->assign("orders",$orders);
@@ -59,4 +63,4 @@ $smarty->setConfigDir(WE_CONFIG_DIR);
 $smarty->setCacheDir(WE_CACHE_DIR);
 
 
-$smarty->display('order_manage.html');
+// $smarty->display('order_manage.html');

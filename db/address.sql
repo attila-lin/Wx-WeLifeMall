@@ -18,3 +18,6 @@ CREATE TABLE `address` (
     PRIMARY KEY (`ano`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
+
+INSERT INTO `address` VALUES
+(1, 1, '西湖区教育局');

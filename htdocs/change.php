@@ -28,6 +28,13 @@ if(!admin::isLogin()) {
 // 		成功: $log = 1
 // 		失败: $log = 0
 // *************************************
+$smarty = new Smarty;
+
+$smarty->setTemplateDir(WE_TEMPLATE_DIR);
+$smarty->setCompileDir(WE_COMPILE_DIR);
+$smarty->setConfigDir(WE_CONFIG_DIR);
+$smarty->setCacheDir(WE_CACHE_DIR);
+
 
 if (isset($_POST['action']) && $_POST['action'] == "edit") {
 	$db = new db(DB_HOST, DB_USER, DB_PWD, DB_NAME);
@@ -64,18 +71,8 @@ if (isset($_POST['action']) && $_POST['action'] == "edit") {
 	}
 }
 
-$smarty = new Smarty;
-
-$smarty->setTemplateDir(WE_TEMPLATE_DIR);
-$smarty->setCompileDir(WE_COMPILE_DIR);
-$smarty->setConfigDir(WE_CONFIG_DIR);
-$smarty->setCacheDir(WE_CACHE_DIR);
-
-// $smarty->testInstall();
-
-// $smarty->force_compile = true;
-// $smarty->debugging = true;
-// $smarty->caching = true;
-// $smarty->cache_lifetime = 120;
+$food = new food($db, 'chinese');
+// print_r($food->getAllFood());
+$smarty->assign("foods", $food->getAllFood());
 
 $smarty->display('change.html');

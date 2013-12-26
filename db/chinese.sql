@@ -21,3 +21,6 @@ CREATE TABLE IF NOT EXISTS `chinese` (
   `recommond` int(1) NOT NULL, 
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;
+
+INSERT INTO `chinese` VALUES
+(1, '青菜豆腐汤', 8.0, '1.jpg', '青菜豆腐汤很好次的', 0);

@@ -16,27 +16,29 @@ class order{
 	// $fidsstring = "1:2|2:3|3:3"
 	function getFidArray($fidsstring){ 
 		$fids = array( 1 => array(), 2 => array(), 3 => array(), 4 => array());
-		$fidstring = split("|", $fidsstring);
-		foreach ($fidarray as $key => $value) {  // $value = "1:2"
-			$fid = split(":", $fidsstring);
+		// print_r($fidsstring);
+		$fidstring = split("\|", $fidsstring);
+		// print_r($fidstring);
+		foreach ($fidstring as $key => $value) {  // $value = "1:2"
+			$fid = split(":", $value);
 			switch (intval($fid[0])) {				// $fid[0] = 1 2 3
 			 	case 1:
-			 		array_push($fids[1], $fid[1]);  // $fid[1] = 2 
+			 		array_push($fids[1], intval($fid[1]) );  // $fid[1] = 2 
 			 		break;
 			 	case 2:
-			 		array_push($fids[2], $fid[1]);  // $fid[1] =   3
+			 		array_push($fids[2], intval($fid[1]) );  // $fid[1] =   3
 			 		break;
 			 	case 3:
-			 		array_push($fids[3], $fid[1]);  // $fid[1] =     3
+			 		array_push($fids[3], intval($fid[1]) );  // $fid[1] =     3
 			 		break;
 			 	case 4:
-			 		array_push($fids[4], $fid[1]);  
+			 		array_push($fids[4], intval($fid[1]) );  
 			 		break;
 			 	default:
 			 		break;
 			 }
 		}
-
+		// print_r($fids);
 		return $fids;
 	}
 

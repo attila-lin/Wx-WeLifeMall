@@ -23,7 +23,7 @@ switch($type) {
                     'Title'=>'点击查看今日菜谱',
                     'Description'=>'',
                     'PicUrl'=>'http://www.welifemall.com/Upload/20131204101750foc.jpg',
-                    'Url'=>'http://www.ingfs.com/today.php?user=' . $user,
+                    'Url'=>'http://www.ingfs.com/today/today.php?user=' . $user,
                     )
                 );
                 $weObj->news($newsData)->reply();

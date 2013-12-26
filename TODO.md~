@@ -190,7 +190,7 @@
 	action: today_menu.php
 	data:
 		action = recommond
-		category = 1	// 1表示chinese，
+		category = 1	// 其中第一个1表示chinese，
 		id = 1|2|3  	// 1,2,3表示chinese的1,2,3号
 
 	result:

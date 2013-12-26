@@ -36,6 +36,10 @@ else{
 			break;
 	}
 }
+if(!isset($_POST['action']) && $_POST['action'] == 'recommond' ){
+	
+}
+
 $food = new food($db, $category);
 
 $smarty->assign("foods", $food->getAllFood());

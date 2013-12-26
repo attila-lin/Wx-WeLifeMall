@@ -74,4 +74,6 @@ class food{
 		$this->db->query($sql);
 		return $this->db->fetchAll();
 	}
+
+
 }

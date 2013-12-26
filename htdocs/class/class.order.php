@@ -10,10 +10,11 @@ class order{
 	function order($db){
 		$this->db 		= $db;
 		$this->tblName = "order";
-		$this->fieldList= array("oid", "uid", "fids", "time", "price", "ano", "pno", "status");
+		$this->fieldList= array("oid", "uid", "chinese", "western", "fruit", "dessert", "time", "price", "ano", "pno", "status");
 	}
 
 	// $fidsstring = "1:2|2:3|3:3"
+	/*
 	function getFidArray($fidsstring){ 
 		$fids = array( 1 => array(), 2 => array(), 3 => array(), 4 => array());
 		// print_r($fidsstring);
@@ -41,6 +42,7 @@ class order{
 		// print_r($fids);
 		return $fids;
 	}
+	*/
 
 	function getAllOrder() {
 		$sql = "SELECT * FROM `$this->tblName`";
@@ -65,9 +67,9 @@ class order{
 			return false;
 	}
 
-	function addOrder($uid, $fids, $time, $price, $ano, $pno, $status=0) {
+	function addOrder($uid, $chinese, $western, $fruit, $dessert, $time, $price, $ano, $pno, $status=0) {
 		$sql = "INSERT INTO `$this->tblName` 
-				VALUES(null,'$uid', '$fids', '$time', '$price', '$ano', '$pno', '$status')";
+				VALUES(null,'$uid', '$chinese', '$western', '$fruit', '$dessert', '$time', '$price', '$ano', '$pno', '$status')";
 		$this->db->query($sql);
 
 		return $this->db->insertID();
@@ -81,7 +83,7 @@ class order{
 		else{
 			$tmp = "= $id";
 		}
-		$sql = "DELETE FROM `$this->tblName` WHERE `fid` " . $tmp ;
+		$sql = "DELETE FROM `$this->tblName` WHERE `oid` " . $tmp ;
 		$this->db->query($sql);
 
 		return $this->db->affectedRows();

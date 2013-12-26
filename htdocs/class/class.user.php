@@ -50,9 +50,20 @@ class user{
 		}
 	}
 
-	function getUser($openid) {
+	function getUser($id) {
 		$sql = "SELECT * FROM `$this->tblName` 
-				WHERE `openid` = '$openid'";
+				WHERE `uid` = '$id' limit 1";
+		if($this->db->query($sql)){
+			return $this->db->fetchRow();
+		}
+		else{
+			return false;
+		}
+	}
+
+	function findUser($openid) {
+		$sql = "SELECT * FROM `$this->tblName` 
+				WHERE `openid` = '$openid' limit 1";
 		if($this->db->query($sql)){
 			return $this->db->fetchRow();
 		}

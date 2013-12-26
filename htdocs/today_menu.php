@@ -15,10 +15,9 @@ $smarty->setCompileDir(WE_COMPILE_DIR);
 $smarty->setConfigDir(WE_CONFIG_DIR);
 $smarty->setCacheDir(WE_CACHE_DIR);
 
-
 $chinese = new food($db, 'chinese');
 $western = new food($db, 'western');
-$fruit = new food($db, 'fruit');
+$fruit   = new food($db, 'fruit');
 $dessert = new food($db, 'dessert');
 
 $smarty->assign("chinese", $chinese->getAllFood());

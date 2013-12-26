@@ -25,7 +25,8 @@ $smarty = new Smarty;
 
 if(!isset($_GET['category'])){
 	$_GET['category'] = '1'; // 设置默认界面为chinese
-	$db = new db(DB_HOST, DB_USER, DB_PWD, DB_NAME);
+}
+else{
 	switch ($_GET['category']) {
 		case '1':
 			$category = 'chinese';
@@ -42,12 +43,28 @@ if(!isset($_GET['category'])){
 		default:
 			break;
 	}
-	$food = new food($db, $category);
-	$foods = $food->getRecommond();
-	$smarty->assign("food", $foods);
 }
 
 
+$db = new db(DB_HOST, DB_USER, DB_PWD, DB_NAME);
+$food = new food($db, $category);
+$foods = $food->getRecommond();
+
+$smarty->assign("food", $foods);
+
+
+if(isset(($_GET['openid']))){
+	$openid = $_GET['openid'];
+}
+$user = new user($db);
+$affectid = $user->findUser($openid);
+if($affectid){
+	$uid = $affectid;
+}
+else{
+	$uid = $user->addUser($openid);
+}
+$smarty->assign("uid", $uid);
 
 $smarty->setTemplateDir(WE_TEMPLATE_DIR);
 $smarty->setCompileDir(WE_COMPILE_DIR);

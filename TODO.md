@@ -77,6 +77,7 @@
 	data:
 		id = 1|2|3   // 用'|'分隔
 		category = 1 // category 为数字 1,2,3,4 分别对应四个类别
+		
 		action = delete
 
 	result:
@@ -199,9 +200,10 @@
 	methor: POST
 	action: today_menu.php
 	data:
-		action = recommond
 		category = 1	// 1表示chinese，
 		id = 1|2|3  	// 1,2,3表示chinese的1,2,3号
+
+		action = recommond
 
 	result:
 		成功: $log = 1
@@ -216,6 +218,7 @@
 	前台选择，例如  today/today.php?openid=XXXXXXXX&category=1
 
 	foods = array("id", "name", "price", "pic", "content", "recommond")
+	uid //用户的id	
 
 	methor: GET
 	action: today.php
@@ -224,26 +227,45 @@
 		category
 
 	result:
-		成功: $log = 1
+		成功: uid  foods //用户id
 		失败: $log = 0
 
 
 ### 2.点单
+	
+	today/order.php?uid=XX
 
-	$addresses = array(ano, address )
-	$phones = array(pno, phone)
+	$addresses = Array ( 
+					[0] => Array ( 
+							[0] => 1 
+							[ano] => 1 
+							[1] => 1 
+							[uid] => 1 
+							[2] => 西湖区教育局 
+							[address] => 西湖区教育局 ) ) 
+	$phones = Array ( 
+					[0] => Array ( 
+							[0] => 1 
+							[pno] => 1 
+							[1] => 1 
+							[uid] => 1 
+							[2] => 18765432123 
+							[phone] => 18765432123 ) )
 
 	methor: POST
 	action: order.php
 
 	data:
-	
+		uid 
 		chinese = 1|2
 		western = 2|3
-		fruit = 1|4
+		fruit = 
 		dessert = 1|1
+		price = 
 		address or ano  // 如为新address，先insert，再取出ano
 		phone or pno	// 如为新phone，先insert，再取出pno
+		
+		action = order
 
 	result:
 		成功: $log = 1

@@ -2,7 +2,9 @@
 
 require_once(dirname(__FILE__) . "/config.php");
 
+// some function
 require_once(WE_ROOT . "/function.php");
+
 // add classes
 require_once(WE_CLASS_DIR . "/class.db.php");
 require_once(WE_CLASS_DIR . "/class.admin.php");

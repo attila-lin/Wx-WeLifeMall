@@ -13,6 +13,13 @@ class address{
 
 	function getAddr($id) {
 		$sql = "SELECT * FROM `$this->tblName` 
+				WHERE `ano` = '$id' LIMIT 1";
+		$this->db->query($sql);
+		return $this->db->fetchRow();
+	}
+
+	function findAddr($id) {
+		$sql = "SELECT * FROM `$this->tblName` 
 				WHERE `uid` = '$id'";
 		return $this->db->query($sql) ? $this->db->fetchAll() : false;
 	}

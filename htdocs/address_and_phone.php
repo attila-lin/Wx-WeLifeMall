@@ -38,20 +38,21 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $db = new db(DB_HOST, DB_USER, DB_PWD, DB_NAME);
 
 $user = new user($db);
-$address = new address($db);
-$phone = new phone($db);
 
-$userarray = $user->getAllUser();
+$users = $user->getAllUser();
 
-foreach ($userarray as $key => $value) { // userarray = { [uid] = }
-	$anos = $address->getAddr($value['uid']);
-	$pnos = $phone->getPhone($value['uid']);
+foreach ($users as $key => &$value) { 
+	// print_r($value);
+	$anos = $user->getAddressClass()->findAddr($value['uid']);
+	$pnos = $user->getPhoneClass()->findPhone($value['uid']);
 	$value['anos'] = $anos;
 	$value['pnos'] = $pnos;
 }
+// print_r($users);
 
-if(!isset($_GET['num']))
+if(!isset($_GET['num'])){
 	$smarty->assign("users",$users);
+}
 else{
 	$users = array_chunk($users, intval($num));
 	$smarty->assign("users", $users[intval($page)-1]);

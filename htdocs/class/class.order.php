@@ -86,4 +86,14 @@ class order{
 
 		return $this->db->affectedRows();
 	}
+
+	function getAddressClass(){
+		$address = new address($this->db);
+		return $address;
+	}
+
+	function getPhoneClass(){
+		$phone = new phone($this->db);
+		return $phone;
+	}
 }

@@ -43,7 +43,7 @@
 		成功: $log = 1
 		失败: $log = 0
 
-### 4.修改
+### 4.修改菜
 
 	$foods = Array([0] => Array(id, name) )
 	// 默认是chinese的所有菜
@@ -91,13 +91,35 @@
 
 ### 7.管理订单
 
-	$orders = array("oid", "uid", "fids", "time", "price", "ano", "pno", "status" )
+	$orders = Array ( 
+				[0] => Array ( 
+						[oid] => 1 
+						[uid] => 1 
+						[fids] => Array ( 
+									[1] => Array ( 
+											[0] => 1 ) 
+									[2] => Array ( ) 
+									[3] => Array ( ) 
+									[4] => Array ( ) )
+						[time] => 2013-12-26 16:23:55 
+						[price] => 8.00 
+						[ano] => Array ( 
+							[0] => Array ( 
+									[ano] => 1 
+									[uid] => 1 
+									[address] => è¥¿æ¹–åŒºæ•™è‚²å±€ ) ) 
+						[pno] => Array ( 
+							[0] => Array ( 
+									[pno] => 1 
+									[uid] => 1 
+									[phone] => 18765432123 ) ) 
+						[status] => 1 ) ) 
 	// fids = Array ( [1] => Array ( [0] => 1 ) 
 	//				  [2] => Array ( ) 
 	// 			      [3] => Array ( ) 
 	//  			  [4] => Array ( ) ) 
 	//
-	// status: 1.下单 2.运送 3.接收	
+	// status: 1.下单 2.运送中 3.接收	
 
 	methor: GET
 	action: order_manage.php
@@ -107,15 +129,30 @@
 		page // 页号
 
 	result:
-		成功: $orders = array("oid", "uid", "fids", "time", "price", "ano", "pno", "status" )
+		成功: $orders 
 		失败: 
 
 ### 8.管理用户
 
-	$users = array("uid", "openid", "anos"=array(), "pnos"=array() )
+	$users = Array ( 
+				[0] => Array ( 
+						[0] => 1 
+						[uid] => 1 
+						[1] => jojoafdjwjeofidkej 
+						[openid] => jojoafdjwjeofidkej 
+						[anos] => Array ( 
+									[0] => Array ( 
+											[ano] => 1 
+											[uid] => 1 
+											[address] => è¥¿æ¹–åŒºæ•™è‚²å±€ ) ) 
+						[pnos] => Array ( 
+									[0] => Array ( 
+											[pno] => 1
+											[uid] => 1
+											[phone] => 18765432123 ) ) ) ) 
 
 	methor: GET
-	action: food.php
+	action: address_and_phone.php
 	data:
 		// 默认全部输出
 		num  // 每页数
@@ -128,13 +165,23 @@
 ### 7.设置菜
 #### 1) 得到菜单
 
-	methor: POST
+	$foods = Array ( 
+				[0] => Array ( 
+							[id] => 1 
+							[name] => é’èœè±†è…æ±¤ 
+							[price] => 8.00 
+							[pic] => 1.jpg 
+							[content] => é’èœè±†è…æ±¤å¾ˆå¥½æ¬¡çš„ 
+							[recommond] => 0 ) ) 
+
+	methor: GET 
 	action: today_menu.php
 	data:
-		category
+		category = 1 // category 为数字 1,2,3,4 分别对应四个类别
+					// 默认是1（chinese）
 
 	result:
-		成功: $foods = array()
+		成功: $foods 
 		失败: 
 
 #### 2) 设置推荐菜

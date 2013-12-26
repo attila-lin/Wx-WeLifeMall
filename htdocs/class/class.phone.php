@@ -13,6 +13,13 @@ class phone{
 
 	function getPhone($id) {
 		$sql = "SELECT * FROM `$this->tblName` 
+				WHERE `pno` = '$id' LIMIT 1";
+		$this->db->query($sql);
+		return $this->db->fetchRow();
+	}
+
+	function findPhone($id) {
+		$sql = "SELECT * FROM `$this->tblName` 
 				WHERE `uid` = '$id'";
 		$this->db->query($sql);
 		return $this->db->fetchAll();

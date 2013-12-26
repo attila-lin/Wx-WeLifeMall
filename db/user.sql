@@ -17,3 +17,5 @@ CREATE TABLE `user` (
     PRIMARY KEY (`uid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
+INSERT INTO `user` VALUES
+(1, 'jojoafdjwjeofidkej');

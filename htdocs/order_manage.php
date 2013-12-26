@@ -40,14 +40,28 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 $db = new db(DB_HOST, DB_USER, DB_PWD, DB_NAME);
 $order = new order($db);
+$chinese = new food($db, "chinese");
+$western = new food($db, "western");
+$fruit   = new food($db, "fruit");
+$dessert = new food($db, "dessert");
+
+
 $orders = $order->getAllOrder();
-foreach ($orders as $key => $value) {
+foreach ($orders as $key => &$value) {
+
 	$fidvalue = $value['fids'];
-	$value['fids'] = array();
-	print_r($order->getFidArray($fidvalue));
 	$value['fids'] = $order->getFidArray($fidvalue); 
+
+	$addre = $value['ano'];
+	$value['ano'] = $order->getAddressClass()->getAddr($addre);
+
+	$phone = $value['pno'];
+	$value['pno'] = $order->getPhoneClass()->getPhone($phone);
+
 }
-print_r($orders);
+// echo "orders<br \>";
+// print_r($orders);
+// echo "<br \>";
 
 if(!isset($_GET['num']))
 	$smarty->assign("orders",$orders);
@@ -56,6 +70,7 @@ else{
 	$smarty->assign("orders", $orders[intval($page)-1]);
 }
 
+$smarty->assign("orders", $orders);
 
 $smarty->setTemplateDir(WE_TEMPLATE_DIR);
 $smarty->setCompileDir(WE_COMPILE_DIR);
@@ -63,4 +78,4 @@ $smarty->setConfigDir(WE_CONFIG_DIR);
 $smarty->setCacheDir(WE_CACHE_DIR);
 
 
-// $smarty->display('order_manage.html');
+$smarty->display('order_manage.html');

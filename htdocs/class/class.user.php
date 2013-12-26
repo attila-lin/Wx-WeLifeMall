@@ -4,8 +4,6 @@ class user{
 	private $db;
 	private $tblName;
 	private $fieldList;
-	private $address;
-	private $phone;
 
 	function user($db){
 		$this->db 		= $db;
@@ -104,13 +102,13 @@ class user{
 		return $this->db->query($sql) ? $this->db->affectedRows() : false;
 	}
 
-	function getaddress(){
-		$this->address = address($this->db);
-		return $this.address;
+	function getAddressClass(){
+		$address = new address($this->db);
+		return $address;
 	}
 
-	function getphone(){
-		$this->phone = phone($this->db);
-		return $this.phone;
+	function getPhoneClass(){
+		$phone = new phone($this->db);
+		return $phone;
 	}
 }

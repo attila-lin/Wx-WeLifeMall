@@ -5,7 +5,7 @@
  * @package Example-application
  */
 
-require 'init.php';
+require '../init.php';
 
 $smarty = new Smarty;
 
@@ -61,4 +61,4 @@ $smarty->setCacheDir(WE_CACHE_DIR);
 // $smarty->caching = true;
 // $smarty->cache_lifetime = 120;
 
-$smarty->display('today.html');
+$smarty->display('today/index.html');

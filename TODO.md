@@ -35,8 +35,12 @@
 	methor: POST
 	action: add.php
 	data:
-		name, price, category, upload_file, content
-		// category 为数字 1,2,3,4 分别对应四个类别 chinese western fruit dessert
+		name
+		price
+		category	// category 为数字 1,2,3,4 分别对应四个类别 chinese western fruit dessert
+		upload_file
+		content
+		
 		action = add
 
 	result:
@@ -51,8 +55,12 @@
 	methor: POST
 	action: change.php
 	data:
-		id, name, price, category, pic, content
-		// category 为数字 1,2,3,4 分别对应四个类别
+		idname
+		price
+		category	// category 为数字 1,2,3,4 分别对应四个类别 chinese western fruit dessert
+		upload_file
+		content
+		
 		action = edit
 
 	result:
@@ -159,13 +167,13 @@
 		page // 页号
 
 	result:
-		成功: $users = array("uid", "openid", "anos"=array(), "pnos"=array() )
+		成功: $users 
 		失败: 
 
 ### 7.设置菜
 #### 1) 得到菜单
 
-	$foods = Array ( 
+	$chinese = Array ( 
 				[0] => Array ( 
 							[id] => 1 
 							[name] => é’èœè±†è…æ±¤ 
@@ -173,15 +181,17 @@
 							[pic] => 1.jpg 
 							[content] => é’èœè±†è…æ±¤å¾ˆå¥½æ¬¡çš„ 
 							[recommond] => 0 ) ) 
+	$western = 
+	$fruit =
+	$dessert =
 
 	methor: GET 
 	action: today_menu.php
 	data:
-		category = 1 // category 为数字 1,2,3,4 分别对应四个类别
-					// 默认是1（chinese）
+
 
 	result:
-		成功: $foods 
+		成功: 
 		失败: 
 
 #### 2) 设置推荐菜

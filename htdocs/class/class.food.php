@@ -59,11 +59,18 @@ class food{
 	}
 
 	function setRecommond($id){
+		// 条件判断
+		if(is_array($id)) {
+			$tmp = "IN (" . join(",", $id) . ")";
+		}
+		else{
+			$tmp = "= $id";
+		}
 		$sql = "UPDATE `$this->tblName`
 				SET `recommond` = '1' 
-				WHERE `id` = '$id'";
+				WHERE `id` " . $tmp;
 		if($this->db->query($sql))
-			return true;
+			return $this->db->affectedRows();
 		else
 			return false;
 	}

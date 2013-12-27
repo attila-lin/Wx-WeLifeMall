@@ -54,9 +54,21 @@ $dessert = new food($db, "dessert");
 // 	return false;
 // }
 
-$orders = $order->getAllOrder();
+if(isset($_POST['action']) && $_POST['action'] == 'edit' ){
+	$status = $_POST['status'];
+	$id = $_POST['id'];
+	$log = $orders->editOrder($id, $status);
+	if($log){
 
-// print_r($orders);
+	}
+	else{
+		
+	}
+}
+
+
+
+$orders = $order->getAllOrder();
 
 foreach ($orders as $key => &$value) {
 	
@@ -126,7 +138,7 @@ foreach ($orders as $key => &$value) {
 	$value['status'] = $status;
 
 }
-print_r($orders);
+// print_r($orders);
 
 if(!isset($_GET['num']))
 	$smarty->assign("orders",$orders);
@@ -143,4 +155,4 @@ $smarty->setConfigDir(WE_CONFIG_DIR);
 $smarty->setCacheDir(WE_CACHE_DIR);
 
 
-// $smarty->display('order_manage.html');
+$smarty->display('order_manage.html');

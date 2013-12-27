@@ -33,7 +33,7 @@ if(!admin::isLogin())
 			exit();
 		}
 	}
-	else  
+	else if(isset($_POST['action']) && $_POST['action'] == "logout") 
 	{
 		$smarty = new Smarty;
 

@@ -22,7 +22,7 @@
 ### 2.登出
 
 	methor: POST
-	action: login.php
+	action: logout.php
 	data:
 		action = logout
 

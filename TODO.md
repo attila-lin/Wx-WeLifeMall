@@ -100,35 +100,43 @@
 
 ### 7.管理订单
 
-	$orders = Array ( 
-				[0] => Array ( 
-						[oid] => 1 
-						[uid] => 1 
-						[fids] => Array ( 
-									[1] => Array ( 
-											[0] => 1 ) 
-									[2] => Array ( ) 
-									[3] => Array ( ) 
-									[4] => Array ( ) )
-						[time] => 2013-12-26 16:23:55 
-						[price] => 8.00 
-						[ano] => Array ( 
-							[0] => Array ( 
-									[ano] => 1 
-									[uid] => 1 
-									[address] => è¥¿æ¹–åŒºæ•™è‚²å±€ ) ) 
-						[pno] => Array ( 
-							[0] => Array ( 
-									[pno] => 1 
-									[uid] => 1 
-									[phone] => 18765432123 ) ) 
-						[status] => 1 ) ) 
-	// fids = Array ( [1] => Array ( [0] => 1 ) 
-	//				  [2] => Array ( ) 
-	// 			      [3] => Array ( ) 
-	//  			  [4] => Array ( ) ) 
-	//
-	// status: 1.下单 2.运送中 3.接收	
+	$orders = Array ( [0] => Array ( 
+					[food] => Array ( 
+								[0] => Array ( 
+										[0] => Array ( 
+											[0] => 1 
+											[id] => 1 
+											[1] => é’èœè±†è…æ±¤ 
+											[name] => é’èœè±†è…æ±¤ 
+											[2] => 8.00 
+											[price] => 8.00 
+											[3] => 1.jpg 
+											[pic] => 1.jpg 
+											[4] => é’èœè±†è…æ±¤å¾ˆå¥½æ¬¡çš„ 
+											[content] => é’èœè±†è…æ±¤å¾ˆå¥½æ¬¡çš„ [5] => 0 
+											[recommond] => 0 ) ) 
+								[1] => Array ( ) 
+								[2] => Array ( ) 
+								[3] => Array ( ) ) 
+				 	[ano] => Array ( 
+								[0] => 1 
+								[ano] => 1 
+								[1] => 1 
+								[uid] => 1 
+								[2] => è¥¿æ¹–åŒºæ•™è‚²å±€ 
+								[address] => è¥¿æ¹–åŒºæ•™è‚²å±€ ) 
+					[pno] => Array ( 
+								[0] => 1 
+								[pno] => 1 
+								[1] => 1 
+								[uid] => 1 
+								[2] => 18765432123 
+								[phone] => 18765432123 ) 
+		 			[time] => 2013-12-26 16:23:55 
+					[status] => 1 ) )  
+		// status: 1.下单 2.运送中 3.接收	
+
+
 
 	methor: GET
 	action: order_manage.php

@@ -18,6 +18,20 @@ class food{
 		return $this->db->fetchAll();
 	}
 
+	function getFoods($id) {
+		if(empty($id)){
+			return array();
+		}
+		else{
+			$tmp = "IN (" . join(",", $id) . ")";
+			$sql = "SELECT * FROM `$this->tblName` 
+					WHERE `id` " . $tmp;
+			// echo $sql;
+			$this->db->query($sql);
+			return $this->db->fetchAll();
+		}
+	}
+
 	function getFood($id) {
 		$sql = "SELECT * FROM `$this->tblName` 
 				WHERE `id` = '$id'";

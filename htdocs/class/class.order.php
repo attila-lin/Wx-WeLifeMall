@@ -9,7 +9,7 @@ class order{
 
 	function order($db){
 		$this->db 		= $db;
-		$this->tblName = "order";
+		$this->tblName = "orders";
 		$this->fieldList= array("oid", "uid", "chinese", "western", "fruit", "dessert", "time", "price", "ano", "pno", "status");
 	}
 

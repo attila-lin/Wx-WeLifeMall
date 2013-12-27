@@ -4,7 +4,7 @@
 
  * @package Example-application
  */
-
+ // error_reporting(0);
 require 'init.php';
 
 //  防止全局变量造成安全隐患
@@ -45,23 +45,88 @@ $western = new food($db, "western");
 $fruit   = new food($db, "fruit");
 $dessert = new food($db, "dessert");
 
+// function myfunction($v) 
+// {
+// 	if ($v != '')
+// 	{
+// 		return true;
+// 	}
+// 	return false;
+// }
 
 $orders = $order->getAllOrder();
+
+// print_r($orders);
+
 foreach ($orders as $key => &$value) {
+	
+	print_r($value);
 
-	$fidvalue = $value['fids'];
-	$value['fids'] = $order->getFidArray($fidvalue); 
+	$chi_val = $value['chinese'];
+	$wes_val = $value['western'];
+	$fru_val = $value['fruit'];
+	$des_val = $value['dessert'];
 
-	$addre = $value['ano'];
-	$value['ano'] = $order->getAddressClass()->getAddr($addre);
+	$ano = $value['ano'];
+	$pno = $value['pno'];
 
-	$phone = $value['pno'];
-	$value['pno'] = $order->getPhoneClass()->getPhone($phone);
+	$time = $value['time'];
+	$status = $value['status'];
+
+	$chi_arr = split("\|", $chi_val);
+	$wes_arr = split("\|", $wes_val);
+	$fru_arr = split("\|", $fru_val);
+	$des_arr = split("\|", $des_val);
+
+	// print_r($chi_arr);
+	array_filter($chi_arr);
+	foreach ($chi_arr as $key => $value) {
+		if($value == '')
+			unset($chi_arr[$key]);
+	}
+	$chi = $chinese->getFoods($chi_arr);
+
+	
+	array_filter($wes_arr);
+	foreach ($wes_arr as $key => $value) {
+		if($value == '')
+			unset($wes_arr[$key]);
+	}
+	$wes = $western->getFoods($wes_arr);
+
+	array_filter($fru_arr);
+	foreach ($fru_arr as $key => $value) {
+		if($value == '')
+			unset($fru_arr[$key]);
+	}
+	$fru = $fruit->getFoods($fru_arr);
+
+	array_filter($des_arr);
+	foreach ($des_arr as $key => $value) {
+		if($value == '')
+			unset($des_arr[$key]);
+	}
+	$des = $dessert->getFoods($des_arr);
+
+	// print_r($chi);
+	// print_r($wes);
+	// print_r($fru);
+	// print_r($des);
+
+	$food = array();
+	array_push($food, $chi, $wes, $fru, $des);
+	$value['food'] = $food;
+
+
+	$value['ano'] = $order->getAddressClass()->getAddr($ano);
+
+	$value['pno'] = $order->getPhoneClass()->getPhone($pno);
+
+	$value['time'] = $time;
+	$value['status'] = $status;
 
 }
-// echo "orders<br \>";
-// print_r($orders);
-// echo "<br \>";
+print_r($orders);
 
 if(!isset($_GET['num']))
 	$smarty->assign("orders",$orders);
@@ -78,4 +143,4 @@ $smarty->setConfigDir(WE_CONFIG_DIR);
 $smarty->setCacheDir(WE_CACHE_DIR);
 
 
-$smarty->display('order_manage.html');
+// $smarty->display('order_manage.html');
